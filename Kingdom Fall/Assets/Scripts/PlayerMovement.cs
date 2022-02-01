@@ -5,20 +5,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // For detecting objects in the Ground layer (assigned in inspector)
-    public LayerMask groundLayer;
+    [SerializeField] LayerMask groundLayer;
 
     // rigidbody for physics
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
 
     // Raycast to determine if the player is on the ground
-    private RaycastHit2D hit;
-    private float raycastLength = 0.5f;
+    RaycastHit2D hit;
+    float raycastLength = 0.5f;
 
     // movement parameters
     float moveSpeed = 300f;
     float moveDirection = 0;
     bool jump;
     float jumpHeight = 5f;
+    bool facingRight = true;
 
     // called at start of game
     private void Awake()
@@ -31,6 +32,20 @@ public class PlayerMovement : MonoBehaviour
         // detects movement inputs (left, right, jump)
         moveDirection = Input.GetAxisRaw("Horizontal");
         jump = Input.GetButton("Jump");
+
+        // flips the player depending on where they're facing and which direction they want to go
+        if(moveDirection > 0 && !facingRight)
+        {
+            transform.Rotate(0, 180, 0);
+            facingRight = true;
+        }
+        
+        if(moveDirection < 0 && facingRight)
+        {
+            transform.Rotate(0, 180, 0);
+            facingRight = false;
+        }
+
     }
 
     private void FixedUpdate()
@@ -54,4 +69,5 @@ public class PlayerMovement : MonoBehaviour
         }
         return false;
     }
+
 }
