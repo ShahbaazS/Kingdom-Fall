@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public Image icon;
     bool isCooldown = false;
 
+
     void Start()
     {
         playerControl = GetComponent<PlayerControl>();
