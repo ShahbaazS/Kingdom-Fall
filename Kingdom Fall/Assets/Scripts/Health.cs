@@ -8,20 +8,22 @@ public class Health : MonoBehaviour
     public float health = 100;
     public float MaxHealth = 100;
 
-    public GameObject healthUI;
-    public Slider slider;
+    public GameObject HealthUI;
+    public Slider HealthBar;
     
     void Start(){
         health = MaxHealth;
-        slider.value = CalculateHealth();
+        HealthBar.value = CalculateHealth();
+
     }
 
     void Update(){
-        slider.value = CalculateHealth();
+        HealthBar.value = CalculateHealth();
 
         if (health < MaxHealth){
-            healthUI.SetActive(true);
+            HealthUI.SetActive(true);
         }
+        
     }
 
     float CalculateHealth(){
