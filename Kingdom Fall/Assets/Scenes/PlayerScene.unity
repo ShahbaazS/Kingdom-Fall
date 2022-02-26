@@ -774,7 +774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000029802322, y: -0.39999947, z: -10}
+  m_LocalPosition: {x: -0.00000023841858, y: -0.39999947, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1109,6 +1109,18 @@ PrefabInstance:
     - target: {fileID: 8538491478219215273, guid: 4c7a89b01eabc5547b5584610f4910fb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538491478888992849, guid: 4c7a89b01eabc5547b5584610f4910fb, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538491478888992849, guid: 4c7a89b01eabc5547b5584610f4910fb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538491478888992879, guid: 4c7a89b01eabc5547b5584610f4910fb, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8538491479215942352, guid: 4c7a89b01eabc5547b5584610f4910fb, type: 3}
       propertyPath: m_Name
@@ -1595,7 +1607,6 @@ MonoBehaviour:
   FirePoint: {fileID: 1440452519}
   BulletPrefab: {fileID: 3581641983046304897, guid: bf180e15d5f7b2644a3725cf6f07a5e4, type: 3}
   AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
-  FireRate: 2
 --- !u!114 &1480764659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,7 +1684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501552001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000029802322, y: -0.39999947, z: -10}
+  m_LocalPosition: {x: -0.00000023841858, y: -0.39999947, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1463997532}

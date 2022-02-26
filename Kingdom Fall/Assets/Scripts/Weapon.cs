@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour{
     
+    //where the attack starts from
     public Transform FirePoint;
+
+    //choose what to attack with
     public GameObject BulletPrefab;
     public GameObject AbilityPrefab;
-    public float FireRate = 2f;
+
+    //cooldown on ability
+    public float AbilityCooldown = 2;
+    private float nextFireTime = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -15,8 +22,11 @@ public class Weapon : MonoBehaviour{
             Shoot();
         }
 
-        if (Input.GetButtonDown("Fire2")){
+        if (Time.time > nextFireTime){
+            if (Input.GetButtonDown("Fire2") ){
             ability();
+            nextFireTime = Time.time + AbilityCooldown;
+        }   
         }
     }
 
