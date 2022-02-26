@@ -26,9 +26,10 @@ public class PlayerControl : MonoBehaviour
     bool resistStarted = false;
 
     float resistIncrement = 1f;
-    float resistAmount = 0.015f;
+    float resistAmount = 2f;
     float resist = 5f;
     float possessAmount = 10f;
+    float decreaseAmount = 0f;
 
     public void Start()
     {
@@ -109,12 +110,13 @@ public class PlayerControl : MonoBehaviour
         while (resistStarted)
         {
             // decrease by the amount enemy resists per call
-            resist -= resistAmount;
-            struggleBar.Decrease(resistAmount);
+            decreaseAmount = resistAmount * Time.deltaTime;
+            resist -= decreaseAmount;
+            struggleBar.Decrease(decreaseAmount);
 
             // press left mouse button to take over
-            if (Input.GetKeyUp(KeyCode.R))
-            {
+            if (Input.GetMouseButtonDown(0))
+                {
                 resist += resistIncrement;
                 struggleBar.Increase(resistIncrement);
             }
