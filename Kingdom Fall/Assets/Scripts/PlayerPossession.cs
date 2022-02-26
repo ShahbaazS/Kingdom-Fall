@@ -37,7 +37,7 @@ public class PlayerPossession : MonoBehaviour
         {
             // takes the first enemy to be hit and lets the player take control
             currentEnemy = hitEnemies[0];
-            currentEnemy.GetComponent<PlayerControl>().TakeOver();
+            currentEnemy.GetComponent<PlayerControl>().StartPossession();
         }
     }
 

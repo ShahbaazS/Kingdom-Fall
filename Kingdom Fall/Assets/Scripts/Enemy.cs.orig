@@ -7,7 +7,14 @@ public class Enemy : MonoBehaviour
     // reference to player control script
     PlayerControl playerControl;
 
+<<<<<<< HEAD
+=======
+    // cooldown ui stuff
+    public Image icon;
+    bool isCooldown = false;
 
+
+>>>>>>> b8eeae0d809da96368a0a11cac7dbb4fb782a4d2
     void Start()
     {
         playerControl = GetComponent<PlayerControl>();
