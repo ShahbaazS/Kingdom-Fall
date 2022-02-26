@@ -8,7 +8,6 @@ public class Health : MonoBehaviour
     public float health = 100;
     public float MaxHealth = 100;
 
-    public GameObject deathEffect;
     public GameObject healthUI;
     public Slider slider;
     
@@ -38,7 +37,6 @@ public class Health : MonoBehaviour
     }
 
     void Die(){
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
