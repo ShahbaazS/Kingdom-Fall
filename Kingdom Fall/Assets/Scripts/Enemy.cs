@@ -13,10 +13,14 @@ public class Enemy : MonoBehaviour
         playerControl = GetComponent<PlayerControl>();
     }
 
-    void Update(){
-        if (playerControl.isPossessed)
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (playerControl.isPossessed)
             {
                 playerControl.Eject();
             }
         }
     }
+}
