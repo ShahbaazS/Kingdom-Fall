@@ -11,11 +11,20 @@ public class Weapon : MonoBehaviour{
     public GameObject BulletPrefab;
     public GameObject AbilityPrefab;
 
+    private Vector3 MyPos;
+    public float speed = 20f;
+
     //cooldown on ability
     public float AbilityCooldown = 2;
     private float nextFireTime = 0;
-
     // Update is called once per frame
+
+    void Start()
+    {
+        MyPos = Camera.main.WorldToScreenPoint(this.transform.position);
+
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1")){
@@ -31,10 +40,14 @@ public class Weapon : MonoBehaviour{
     }
 
     void Shoot (){
-        Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
+        GameObject Bullet = (GameObject)Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
+        Vector3 direction = (Input.mousePosition - MyPos).normalized;
+        Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 
     void ability (){
-        Instantiate(AbilityPrefab, FirePoint.position, FirePoint.rotation);
+        GameObject Ability = (GameObject)Instantiate(AbilityPrefab, FirePoint.position, Quaternion.identity);
+        Vector3 direction = (Input.mousePosition - MyPos).normalized;
+        Ability.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Ability : MonoBehaviour
 {
-    public float speed = 20f;
     public int damage = 80;
     public Rigidbody2D rb;
     
@@ -13,7 +12,6 @@ public class Ability : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.right * speed;
     }
 
 
