@@ -31,6 +31,9 @@ public class PlayerControl : MonoBehaviour
     float possessAmount = 10f;
     float decreaseAmount = 0f;
 
+    // for reseting rotation back to when not possessed
+    Quaternion initialRotation;
+
     public void Start()
     {
         struggleBar = struggleUI.GetComponentInChildren<StruggleBar>();
@@ -56,6 +59,7 @@ public class PlayerControl : MonoBehaviour
 
     void TakeOver()
     {
+        initialRotation = transform.rotation;
         struggleUI.SetActive(false);
 
         // activates the player movement script on the enemy
@@ -66,6 +70,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Eject()
     {
+        transform.rotation = initialRotation;
         struggleUI.SetActive(false);
 
         // sets player position to the enemy position
