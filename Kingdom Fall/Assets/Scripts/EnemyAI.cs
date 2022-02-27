@@ -20,8 +20,7 @@ public class EnemyAI : MonoBehaviour
     EnemyPatrol enemyPatrol;
 
     Transform player;
-    float startPosition;
-    float speed = 100f;
+    float bulletSpeed = 20f;
     public float sightRange = 10f;
     public float shootingRange = 7f;
     public float maxSightRange = 15f;
@@ -35,10 +34,6 @@ public class EnemyAI : MonoBehaviour
         enemyPatrol = GetComponent<EnemyPatrol>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         state = State.Patrolling;
-    }
-    private void Start()
-    {
-        startPosition = transform.position.x;
     }
 
     private void Update()
@@ -98,9 +93,9 @@ public class EnemyAI : MonoBehaviour
 
     void Shoot()
     {
-        Vector2 moveDir = (player.transform.position - bulletPrefab.transform.position).normalized * bulletPrefab.GetComponent<Bullet>().speed;
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletPrefab.GetComponent<Bullet>().rb.velocity = new Vector2(moveDir.x, moveDir.y);
+        GameObject Bullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+        Vector3 direction = (player.transform.position - firePoint.transform.position).normalized;
+        Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
     }
 
     void FindTarget()
