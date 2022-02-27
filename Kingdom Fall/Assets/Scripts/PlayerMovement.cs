@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // For detecting objects in the Ground layer (assigned in inspector)
     [SerializeField] LayerMask groundLayer;
+    [SerializeField] Transform jumpPoint;
 
     // rigidbody for physics
     Rigidbody2D rb;
@@ -61,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded()
     {
         // casts a line downwards from the player's position to detect if it hits the ground
-        hit = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, groundLayer);
+        hit = Physics2D.Raycast(jumpPoint.position, Vector2.down, raycastLength, groundLayer);
 
         if (hit.collider != null) // checks if something in ground layer is hit
         {

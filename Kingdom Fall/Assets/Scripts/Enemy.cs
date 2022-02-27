@@ -23,4 +23,12 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
+    public void Die()
+    {
+        if (playerControl.isPossessed)
+        {
+            playerControl.Eject();
+        }
+    }
 }
