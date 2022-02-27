@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] GameObject entity; // player
     [SerializeField] GameObject struggleUI;
 
+    EnemyAI enemyAI;
     StruggleBar struggleBar;
 
     // cooldown ui stuff
@@ -23,7 +24,7 @@ public class PlayerControl : MonoBehaviour
     public bool isPossessed = false;
 
     //resist parameters
-    bool resistStarted = false;
+    public bool resistStarted = false;
 
     float resistIncrement = 1f;
     float resistAmount = 2f;
@@ -36,6 +37,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Start()
     {
+        enemyAI = GetComponent<EnemyAI>();
         struggleBar = struggleUI.GetComponentInChildren<StruggleBar>();
         icon.fillAmount = 0;
     }
@@ -59,6 +61,8 @@ public class PlayerControl : MonoBehaviour
 
     void TakeOver()
     {
+        enemyAI.enabled = false;
+
         initialRotation = transform.rotation;
         struggleUI.SetActive(false);
 
@@ -70,6 +74,8 @@ public class PlayerControl : MonoBehaviour
 
     public void Eject()
     {
+        enemyAI.enabled = true;
+
         transform.rotation = initialRotation;
         struggleUI.SetActive(false);
 

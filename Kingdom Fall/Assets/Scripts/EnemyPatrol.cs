@@ -23,12 +23,12 @@ public class EnemyPatrol : MonoBehaviour
 
     float leftBound = -100f;
     float rightBound = 100f;
+    bool canMove = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        leftBound = transform.position.x - 100;
-        rightBound = transform.position.x + 100;
+        SetBounds(transform.position.x - 10, transform.position.x + 10);
     }
 
     private void Update()
@@ -39,8 +39,11 @@ public class EnemyPatrol : MonoBehaviour
 
     void FixedUpdate()
     {
-        // moves the enemy left/right based on direction
-        rb.velocity = new Vector2(moveDirection * moveSpeed * Time.deltaTime, rb.velocity.y);
+        if (canMove)
+        {
+            // moves the enemy left/right based on direction
+            rb.velocity = new Vector2(moveDirection * moveSpeed * Time.deltaTime, rb.velocity.y);
+        }
     }
 
     public void SetBounds(float minBound, float maxBound)
@@ -68,7 +71,12 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    void ChangeDirection()
+    public void SetMoving(bool ableToMove)
+    {
+        canMove = ableToMove;
+    }
+
+    public void ChangeDirection()
     {
         if (facingRight)
         {
@@ -82,5 +90,10 @@ public class EnemyPatrol : MonoBehaviour
             facingRight = true;
             moveDirection = 1;
         }
+    }
+
+    public bool isFacingRight()
+    {
+        return facingRight;
     }
 }
