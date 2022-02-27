@@ -32,53 +32,57 @@ public class EnemyAI : MonoBehaviour
     {
         playerControl = GetComponent<PlayerControl>();
         enemyPatrol = GetComponent<EnemyPatrol>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         state = State.Patrolling;
     }
 
     private void Update()
     {
-        switch (state)
+        if(GameObject.FindGameObjectWithTag("Player") != null)
         {
-            default:
-            case State.Patrolling:
-                GenerateBound();
-                FindTarget();
-                break;
-            case State.ChaseTarget:
-                MoveToTarget();
+            player = GameObject.FindGameObjectWithTag("Player").transform;
 
-                if (Vector2.Distance(transform.position, player.position) < shootingRange)
-                {
-                    if(Time.time > nextShootTime)
+            switch (state)
+            {
+                default:
+                case State.Patrolling:
+                    GenerateBound();
+                    FindTarget();
+                    break;
+                case State.ChaseTarget:
+                    MoveToTarget();
+
+                    if (Vector2.Distance(transform.position, player.position) < shootingRange)
                     {
-                        enemyPatrol.SetMoving(false);
-                        Shoot();
-                        nextShootTime = Time.time + shootDelay;
+                        if(Time.time > nextShootTime)
+                        {
+                            enemyPatrol.SetMoving(false);
+                            Shoot();
+                            nextShootTime = Time.time + shootDelay;
+                        }
+                        if (playerControl.resistStarted)
+                        {
+                            state = State.Struggle;
+                        }
                     }
-                    if (playerControl.resistStarted)
+                    else
                     {
-                        state = State.Struggle;
+                        enemyPatrol.SetMoving(true);
                     }
-                }
-                else
-                {
-                    enemyPatrol.SetMoving(true);
-                }
 
-                if(Vector2.Distance(transform.position, player.position) > maxSightRange)
-                {
-                    state = State.Patrolling;
-                }
-                break;
+                    if(Vector2.Distance(transform.position, player.position) > maxSightRange)
+                    {
+                        state = State.Patrolling;
+                    }
+                    break;
 
-            case State.Struggle:
-                enemyPatrol.SetMoving(false);
-                if (!playerControl.resistStarted)
-                {
-                    state = State.ChaseTarget;
-                }
-                break;
+                case State.Struggle:
+                    enemyPatrol.SetMoving(false);
+                    if (!playerControl.resistStarted)
+                    {
+                        state = State.ChaseTarget;
+                    }
+                    break;
+            }
         }
 
     }

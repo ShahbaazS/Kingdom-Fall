@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] GameObject struggleUI;
 
     EnemyAI enemyAI;
+    EnemyPatrol enemyPatrol;
     StruggleBar struggleBar;
 
     // cooldown ui stuff
@@ -38,6 +39,7 @@ public class PlayerControl : MonoBehaviour
     public void Start()
     {
         enemyAI = GetComponent<EnemyAI>();
+        enemyPatrol = GetComponent<EnemyPatrol>();
         struggleBar = struggleUI.GetComponentInChildren<StruggleBar>();
         icon.fillAmount = 0;
     }
@@ -47,6 +49,9 @@ public class PlayerControl : MonoBehaviour
         // makes sure that the cooldown is over before the player can possess
         if (Time.time >= nextPossessTime)
         {
+            gameObject.tag = "Player";
+            entity.tag = "Untagged";
+
             struggleUI.SetActive(true);
             struggleBar.SetMaxStruggle(possessAmount);
 
@@ -62,6 +67,7 @@ public class PlayerControl : MonoBehaviour
     void TakeOver()
     {
         enemyAI.enabled = false;
+        enemyPatrol.enabled = false;
 
         initialRotation = transform.rotation;
         struggleUI.SetActive(false);
@@ -74,6 +80,10 @@ public class PlayerControl : MonoBehaviour
 
     public void Eject()
     {
+        gameObject.tag = "Untagged";
+        entity.tag = "Player";
+
+        enemyPatrol.enabled = true;
         enemyAI.enabled = true;
 
         transform.rotation = initialRotation;

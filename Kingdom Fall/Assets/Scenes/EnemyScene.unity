@@ -1047,6 +1047,7 @@ MonoBehaviour:
   FirePoint: {fileID: 269797053}
   BulletPrefab: {fileID: 3581641983046304897, guid: bf180e15d5f7b2644a3725cf6f07a5e4, type: 3}
   AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
+  speed: 20
   AbilityCooldown: 2
 --- !u!114 &447990845
 MonoBehaviour:
@@ -1523,7 +1524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &618438163
 BoxCollider2D:
   m_ObjectHideFlags: 0
