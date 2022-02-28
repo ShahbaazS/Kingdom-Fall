@@ -42,6 +42,7 @@ public class PlayerControl : MonoBehaviour
         enemyPatrol = GetComponent<EnemyPatrol>();
         struggleBar = struggleUI.GetComponentInChildren<StruggleBar>();
         icon.fillAmount = 0;
+        struggleUI.SetActive(false);
     }
 
     public void StartPossession()

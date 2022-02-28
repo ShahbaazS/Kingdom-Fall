@@ -7,7 +7,7 @@ public class LockRotation : MonoBehaviour
 
     public Quaternion InitialRotation;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         InitialRotation = transform.rotation;
     }

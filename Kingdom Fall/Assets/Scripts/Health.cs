@@ -11,11 +11,13 @@ public class Health : MonoBehaviour
     //UI and slider for health bar
     public GameObject HealthUI;
     public Slider HealthBar;
+
+    Enemy enemy;
     
     void Start(){
         health = MaxHealth;
         HealthBar.value = CalculateHealth();
-
+        enemy = GetComponent<Enemy>();
     }
 
     void Update(){
@@ -37,6 +39,10 @@ public class Health : MonoBehaviour
         health -= damage;
 
         if (health <= 0){
+            if (enemy != null)
+            {
+                enemy.Die();
+            }
             Die();
         }
     }
