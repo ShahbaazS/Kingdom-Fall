@@ -242,6 +242,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpPoint: {fileID: 457732956}
+  facingRight: 1
 --- !u!50 &68059963
 Rigidbody2D:
   serializedVersion: 4
@@ -913,6 +914,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 3581641983046304897, guid: bf180e15d5f7b2644a3725cf6f07a5e4, type: 3}
   AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
   speed: 20
+  Movement: {fileID: 447990847}
   AbilityCooldown: 2
 --- !u!114 &447990845
 MonoBehaviour:
@@ -962,6 +964,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpPoint: {fileID: 99873517}
+  facingRight: 1
 --- !u!61 &447990848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2263,6 +2266,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpPoint: {fileID: 1139467968}
+  facingRight: 1
 --- !u!61 &1328983616
 BoxCollider2D:
   m_ObjectHideFlags: 0
