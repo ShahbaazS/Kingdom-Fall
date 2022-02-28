@@ -15,6 +15,8 @@ public class Weapon : MonoBehaviour{
     private Vector3 MyPos;
     public float speed = 20f;
 
+    public PlayerMovement Movement;
+
     //cooldown on ability
     public float AbilityCooldown = 2;
     private float nextFireTime = 0;
@@ -28,7 +30,7 @@ public class Weapon : MonoBehaviour{
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")){
+        if (Input.GetButtonDown("Fire1") && ShootDirection()){
             ShootBullet();
         }
 
@@ -50,5 +52,16 @@ public class Weapon : MonoBehaviour{
         GameObject Ability = (GameObject)Instantiate(AbilityPrefab, FirePoint.position, Quaternion.identity);
         Vector3 direction = (Input.mousePosition - MyPos).normalized;
         Ability.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
+    }
+
+    private bool ShootDirection()
+    {
+        Vector3 direction = Input.mousePosition;
+        if (Movement.facingRight == true && direction.x > MyPos.x){
+            return true;
+        }else if (Movement.facingRight == false && direction.x < MyPos.x){
+            return true;
+        }
+        return false;
     }
 }

@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     float moveDirection = 0;
     bool jump;
     float jumpHeight = 5f;
-    bool facingRight = true;
+    public bool facingRight = true;
 
     // called at start of game
     private void Awake()
