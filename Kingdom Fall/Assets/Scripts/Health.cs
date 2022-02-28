@@ -38,9 +38,12 @@ public class Health : MonoBehaviour
         if (health <= 0){
             if (enemy != null)
             {
-                enemy.Die();
+                StartCoroutine(enemy.Die());
             }
-            Die();
+            else
+            {
+                Die();
+            }
         }
     }
 

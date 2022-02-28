@@ -24,11 +24,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
         if (playerControl.isPossessed)
         {
             playerControl.Eject();
         }
+
+        // disables everything except Enemy script and PlayerControlScript
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach(Collider2D collider in colliders){
+            collider.enabled = false;
+        }
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<EnemyPatrol>().enabled = false;
+        GetComponent<EnemyAI>().enabled = false;
+        GetComponent<Health>().enabled = false;
+        transform.Find("HealthUI").gameObject.SetActive(false);
+
+        // waits until cooldown is over
+        yield return new WaitForSeconds(playerControl.possessCooldown);
+        Destroy(gameObject); // destroys
     }
 }
