@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Ability : MonoBehaviour
 {
+
+    //damage of ability
     public int damage = 80;
+
+
     public Rigidbody2D rb;
     
 
@@ -14,7 +18,7 @@ public class Ability : MonoBehaviour
     {
     }
 
-
+    //detection of collision to deal damage
     void OnTriggerEnter2D(Collider2D hitInfo){
         Health health = hitInfo.GetComponent<Health>();
         if (health != null){

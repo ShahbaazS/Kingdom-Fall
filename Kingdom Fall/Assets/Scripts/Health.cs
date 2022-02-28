@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
-
+    //current health and max health
     public float health = 100;
     public float MaxHealth = 100;
 
+    //UI and slider for health bar
     public GameObject HealthUI;
     public Slider HealthBar;
     
@@ -26,10 +27,12 @@ public class Health : MonoBehaviour
         
     }
 
+    //returns the current health percentage
     float CalculateHealth(){
         return health / MaxHealth;
     }
 
+    //inflict damage onto the character
     public void TakeDamage (int damage){
         health -= damage;
 
