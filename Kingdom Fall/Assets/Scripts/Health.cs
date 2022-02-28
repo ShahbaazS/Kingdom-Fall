@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     public GameObject HealthUI;
     public Slider HealthBar;
 
+    public GameOver GameOver;
+
     Enemy enemy;
     
     void Start(){
@@ -51,6 +53,9 @@ public class Health : MonoBehaviour
     }
 
     void Die(){
+        if (gameObject.name == "Player"){
+            GameOver.Setup();
+        }
         Destroy(gameObject);
     }
 }
