@@ -424,6 +424,7 @@ MonoBehaviour:
     m_Bits: 64
   wallCheck: {fileID: 68059968}
   checkGroundPoint: {fileID: 71980541}
+  isBound: 1
 --- !u!61 &68059968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -594,6 +595,7 @@ MonoBehaviour:
     m_Bits: 64
   wallCheck: {fileID: 97601877}
   checkGroundPoint: {fileID: 1447874784}
+  isBound: 1
 --- !u!114 &97601873
 MonoBehaviour:
   m_ObjectHideFlags: 0
