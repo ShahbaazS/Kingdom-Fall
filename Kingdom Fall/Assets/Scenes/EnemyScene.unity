@@ -424,6 +424,7 @@ MonoBehaviour:
     m_Bits: 64
   wallCheck: {fileID: 68059968}
   checkGroundPoint: {fileID: 71980541}
+  isBound: 1
 --- !u!61 &68059968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -462,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f15a80b319e66f4bb0ac54bc6183096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3581641983046304897, guid: bf180e15d5f7b2644a3725cf6f07a5e4, type: 3}
+  bulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
   firePoint: {fileID: 828008520}
   sightRange: 5
   shootingRange: 3
@@ -480,7 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 828008520}
-  BulletPrefab: {fileID: 3581641983046304897, guid: bf180e15d5f7b2644a3725cf6f07a5e4, type: 3}
+  BulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
   AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
   speed: 20
   Movement: {fileID: 68059962}
@@ -555,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 439467598}
-  BulletPrefab: {fileID: 3581641983046304897, guid: bf180e15d5f7b2644a3725cf6f07a5e4, type: 3}
+  BulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
   AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
   speed: 20
   Movement: {fileID: 97601876}
@@ -572,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f15a80b319e66f4bb0ac54bc6183096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3581641983046304897, guid: bf180e15d5f7b2644a3725cf6f07a5e4, type: 3}
+  bulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
   firePoint: {fileID: 439467598}
   sightRange: 5
   shootingRange: 3
@@ -594,6 +595,7 @@ MonoBehaviour:
     m_Bits: 64
   wallCheck: {fileID: 97601877}
   checkGroundPoint: {fileID: 1447874784}
+  isBound: 1
 --- !u!114 &97601873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269797052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 0, z: 0}
+  m_LocalPosition: {x: 1.027, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 447990843}
@@ -1392,7 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 269797053}
-  BulletPrefab: {fileID: 3581641983046304897, guid: bf180e15d5f7b2644a3725cf6f07a5e4, type: 3}
+  BulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
   AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
   speed: 20
   Movement: {fileID: 447990847}

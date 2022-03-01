@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
-    //damage of bullet 
+    //damage of Arrow 
     public float speed;
     public int damage = 40;
     public Rigidbody2D rb;
 
     //time until bullet disappears (range of bullet)
-    public float time = 0.2f;
+    public float time = 15f;
     
 
     // Start is called before the first frame update
@@ -32,5 +32,4 @@ public class Bullet : MonoBehaviour
 
         Destroy(gameObject);
     }
-
 }
