@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1071628532622510571}
   - component: {fileID: 1071628532622510570}
   - component: {fileID: 1071628532622510569}
-  - component: {fileID: 1071628532622510568}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -190,24 +189,6 @@ MonoBehaviour:
   HealthUI: {fileID: 5506719763042069737}
   HealthBar: {fileID: 5506719762915372925}
   GameOver: {fileID: 0}
---- !u!114 &1071628532622510568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071628532622510574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4fff119ff811c4a90bc1a2b58d30ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirePoint: {fileID: 1071628532729529193}
-  BulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
-  AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
-  speed: 20
-  Movement: {fileID: 1071628532622510571}
-  AbilityCooldown: 2
 --- !u!1 &1071628532729529192
 GameObject:
   m_ObjectHideFlags: 0
