@@ -92,8 +92,7 @@ public class PlayerControl : MonoBehaviour
 
         weapon.enabled = false;
 
-        enemyPatrol.enabled = true;
-        enemyAI.enabled = true;
+        StartCoroutine(ActivateEnemyAI());
 
         transform.rotation = initialRotation;
         struggleUI.SetActive(false);
@@ -173,5 +172,12 @@ public class PlayerControl : MonoBehaviour
 
             yield return null;    // waits one frame
         }
+    }
+
+    IEnumerator ActivateEnemyAI()
+    {
+        enemyPatrol.enabled = true;
+        enemyAI.enabled = true;
+        yield return new WaitForSeconds(1);
     }
 }

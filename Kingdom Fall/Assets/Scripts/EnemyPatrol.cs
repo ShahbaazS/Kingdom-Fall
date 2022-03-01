@@ -34,8 +34,11 @@ public class EnemyPatrol : MonoBehaviour
 
     private void Update()
     {
-        CheckGround();
-        CheckBounds(leftBound, rightBound);
+        if (isBound)
+        {
+            CheckGround();
+            CheckBounds(leftBound, rightBound);
+        }
     }
 
     void FixedUpdate()
@@ -66,12 +69,9 @@ public class EnemyPatrol : MonoBehaviour
 
     void CheckBounds(float minBound, float maxBound)
     {
-        if (isBound)
+        if(transform.position.x <= minBound || transform.position.x >= maxBound)
         {
-            if(transform.position.x <= minBound || transform.position.x >= maxBound)
-            {
-                ChangeDirection();
-            }
+            ChangeDirection();
         }
     }
 

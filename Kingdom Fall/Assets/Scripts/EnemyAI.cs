@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
 
     PlayerControl playerControl;
     EnemyPatrol enemyPatrol;
+    Weapon weapon;
 
     Transform player;
     float bulletSpeed = 20f;
@@ -26,13 +27,19 @@ public class EnemyAI : MonoBehaviour
     public float maxSightRange = 15f;
 
     float nextShootTime = 0;
-    float shootDelay = 0.5f;
+    [SerializeField] float shootDelay = 1f;
 
     private void Awake()
     {
         playerControl = GetComponent<PlayerControl>();
         enemyPatrol = GetComponent<EnemyPatrol>();
         state = State.Patrolling;
+    }
+
+    private void Start()
+    {
+        weapon = GetComponent<Weapon>();
+        bulletSpeed = weapon.speed;
     }
 
     private void Update()
