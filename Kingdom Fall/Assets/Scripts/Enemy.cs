@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
         GetComponent<EnemyAI>().enabled = false;
         GetComponent<Health>().enabled = false;
         transform.Find("HealthUI").gameObject.SetActive(false);
+        transform.Find("Model").gameObject.SetActive(false);
 
         // waits until cooldown is over
         yield return new WaitForSeconds(playerControl.possessCooldown);
