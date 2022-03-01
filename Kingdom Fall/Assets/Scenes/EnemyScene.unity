@@ -471,16 +471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  FirePoint: {fileID: 439467598}
-  BulletPrefab: {fileID: 3800082992230481357, guid: 0b117a007777f1f40830d907a8b90bb7, type: 3}
-  AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
-  speed: 20
-  Movement: {fileID: 97601876}
-  AbilityCooldown: 2
---- !u!114 &97601871
-MonoBehaviour:
-=======
   m_ExcludedPropertiesInInspector:
   - m_Script
   m_LockStageInInspector: 
@@ -506,26 +496,10 @@ MonoBehaviour:
   m_ComponentOwner: {fileID: 1555336521}
 --- !u!4 &165652404
 Transform:
->>>>>>> 40b080e0d3eedf7635d556a24c041f70fb874577
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 97601869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f15a80b319e66f4bb0ac54bc6183096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3800082992230481357, guid: 0b117a007777f1f40830d907a8b90bb7, type: 3}
-  firePoint: {fileID: 439467598}
-  sightRange: 5
-  shootingRange: 3
-  maxSightRange: 8
---- !u!114 &97601872
-MonoBehaviour:
-=======
   m_GameObject: {fileID: 165652402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.00000023841858, y: -0.39999947, z: -10}
@@ -537,7 +511,6 @@ MonoBehaviour:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &326454481
 GameObject:
->>>>>>> 40b080e0d3eedf7635d556a24c041f70fb874577
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

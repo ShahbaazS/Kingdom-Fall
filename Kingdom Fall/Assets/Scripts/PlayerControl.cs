@@ -176,8 +176,8 @@ public class PlayerControl : MonoBehaviour
 
     IEnumerator ActivateEnemyAI()
     {
+        yield return new WaitForSeconds(1);
         enemyPatrol.enabled = true;
         enemyAI.enabled = true;
-        yield return new WaitForSeconds(1);
     }
 }
