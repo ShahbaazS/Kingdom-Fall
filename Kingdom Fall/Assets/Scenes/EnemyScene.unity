@@ -390,6 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3800082992230481357, guid: 0b117a007777f1f40830d907a8b90bb7, type: 3}
   firePoint: {fileID: 828008520}
+  bulletSpeed: 10
   sightRange: 5
   shootingRange: 3
   maxSightRange: 8
@@ -2480,6 +2481,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1071628533969023695, guid: 3d260544bf34a4f44bd7bf0f0cf5051a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5506719763192140626, guid: 3d260544bf34a4f44bd7bf0f0cf5051a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2504,6 +2509,10 @@ PrefabInstance:
     - target: {fileID: 2702407385617943674, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702407385643738361, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2702407385668995508, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: m_RootOrder
@@ -2650,6 +2659,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 165652403}
+    - target: {fileID: 6245130907422759950, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6245130907900278707, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2675,6 +2688,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8071067306881684009, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8071067307062698688, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2686,6 +2703,10 @@ PrefabInstance:
     - target: {fileID: 8071067308000290578, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
       propertyPath: m_Name
       value: Mage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071067308000290580, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
+      propertyPath: maxSightRange
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8071067308000290600, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
       propertyPath: icon

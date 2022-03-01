@@ -18,10 +18,9 @@ public class EnemyAI : MonoBehaviour
 
     PlayerControl playerControl;
     EnemyPatrol enemyPatrol;
-    Weapon weapon;
 
     Transform player;
-    float bulletSpeed = 20f;
+    [SerializeField] float bulletSpeed = 10f;
     public float sightRange = 10f;
     public float shootingRange = 7f;
     public float maxSightRange = 15f;
@@ -34,12 +33,6 @@ public class EnemyAI : MonoBehaviour
         playerControl = GetComponent<PlayerControl>();
         enemyPatrol = GetComponent<EnemyPatrol>();
         state = State.Patrolling;
-    }
-
-    private void Start()
-    {
-        weapon = GetComponent<Weapon>();
-        bulletSpeed = weapon.speed;
     }
 
     private void Update()
