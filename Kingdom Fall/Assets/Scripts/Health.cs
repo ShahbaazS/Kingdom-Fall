@@ -28,7 +28,18 @@ public class Health : MonoBehaviour
         if (health < MaxHealth){
             HealthUI.SetActive(true);
         }
-        
+        if (health > MaxHealth){
+            health = MaxHealth;
+        }
+    }
+
+    public void Increase(){
+        health = health + 30;
+        MaxHealth = MaxHealth + 30;
+    }
+
+    public void Decrease(){
+        MaxHealth = MaxHealth - 30;
     }
 
     //returns the current health percentage

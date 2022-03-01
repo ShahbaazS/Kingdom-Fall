@@ -18,6 +18,20 @@ public class Sword : MonoBehaviour
     {
     }
 
+    public void PowerUp(){
+        damage = 70;
+        time = 0.6f;
+        Health health = GetComponent<Health>();
+        health.Increase();
+    }
+
+    public void PowerDown(){
+        damage = 40;
+        time = 0.4f;
+        Health health = GetComponent<Health>();
+        health.Decrease();
+    }
+
     void Update(){
         Destroy(this.gameObject, time);
     }
