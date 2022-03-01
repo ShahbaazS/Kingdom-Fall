@@ -24,6 +24,7 @@ public class EnemyPatrol : MonoBehaviour
     float leftBound = -100f;
     float rightBound = 100f;
     bool canMove = true;
+    public bool isBound = true;
 
     void Start()
     {
@@ -65,9 +66,12 @@ public class EnemyPatrol : MonoBehaviour
 
     void CheckBounds(float minBound, float maxBound)
     {
-        if(transform.position.x <= minBound || transform.position.x >= maxBound)
+        if (isBound)
         {
-            ChangeDirection();
+            if(transform.position.x <= minBound || transform.position.x >= maxBound)
+            {
+                ChangeDirection();
+            }
         }
     }
 
