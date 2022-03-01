@@ -49,6 +49,7 @@ public class EnemyAI : MonoBehaviour
                     FindTarget();
                     break;
                 case State.ChaseTarget:
+                    enemyPatrol.isBound = false;
                     MoveToTarget();
 
                     if (Vector2.Distance(transform.position, player.position) < shootingRange)

@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     EnemyAI enemyAI;
     EnemyPatrol enemyPatrol;
     StruggleBar struggleBar;
+    Weapon weapon;
 
     // cooldown ui stuff
     public Image icon;
@@ -40,6 +41,7 @@ public class PlayerControl : MonoBehaviour
     {
         enemyAI = GetComponent<EnemyAI>();
         enemyPatrol = GetComponent<EnemyPatrol>();
+        weapon = GetComponent<Weapon>();
         struggleBar = struggleUI.GetComponentInChildren<StruggleBar>();
         icon.fillAmount = 0;
         struggleUI.SetActive(false);
@@ -67,6 +69,8 @@ public class PlayerControl : MonoBehaviour
 
     void TakeOver()
     {
+        weapon.enabled = true;
+
         enemyAI.enabled = false;
         enemyPatrol.enabled = false;
 
@@ -83,6 +87,8 @@ public class PlayerControl : MonoBehaviour
     {
         gameObject.tag = "Untagged";
         entity.tag = "Player";
+
+        weapon.enabled = false;
 
         enemyPatrol.enabled = true;
         enemyAI.enabled = true;
