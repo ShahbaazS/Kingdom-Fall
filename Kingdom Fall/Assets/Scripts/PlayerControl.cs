@@ -13,7 +13,10 @@ public class PlayerControl : MonoBehaviour
     EnemyAI enemyAI;
     EnemyPatrol enemyPatrol;
     StruggleBar struggleBar;
-    Weapon weapon;
+    //Weapon weapon;
+    KnightWeapon knightWeapon;
+    MageWeapon mageWeapon;
+    ArcherWeapon archerWeapon;
 
     // cooldown ui stuff
     public Image icon;
@@ -34,6 +37,8 @@ public class PlayerControl : MonoBehaviour
     float possessAmount = 10f;
     float decreaseAmount = 0f;
 
+    string activeEnemy;
+
     // for reseting rotation back to when not possessed
     Quaternion initialRotation;
 
@@ -41,7 +46,24 @@ public class PlayerControl : MonoBehaviour
     {
         enemyAI = GetComponent<EnemyAI>();
         enemyPatrol = GetComponent<EnemyPatrol>();
-        weapon = GetComponent<Weapon>();
+        //weapon = GetComponent<Weapon>();
+
+        if (GetComponent<KnightWeapon>() != null)
+        {
+            knightWeapon = GetComponent<KnightWeapon>();
+            activeEnemy = "Knight";
+        }
+        else if (GetComponent<KnightWeapon>() != null)
+        {
+            mageWeapon = GetComponent<MageWeapon>();
+            activeEnemy = "Mage";
+        }
+        else if (GetComponent<KnightWeapon>() != null)
+        {
+            archerWeapon = GetComponent<ArcherWeapon>();
+            activeEnemy = "Archer";
+        }
+
         struggleBar = struggleUI.GetComponentInChildren<StruggleBar>();
         icon.fillAmount = 0;
         struggleUI.SetActive(false);
@@ -69,7 +91,19 @@ public class PlayerControl : MonoBehaviour
 
     void TakeOver()
     {
-        weapon.enabled = true;
+        switch (activeEnemy) 
+        {
+            default:
+            case "Knight":
+                knightWeapon.enabled = true;
+                break;
+            case "Archer":
+                archerWeapon.enabled = true;
+                break;
+            case "Mage":
+                mageWeapon.enabled = true;
+                break;
+        }
 
         enemyAI.enabled = false;
         enemyPatrol.enabled = false;
@@ -90,7 +124,19 @@ public class PlayerControl : MonoBehaviour
         gameObject.tag = "Untagged";
         entity.tag = "Player";
 
-        weapon.enabled = false;
+        switch (activeEnemy)
+        {
+            default:
+            case "Knight":
+                knightWeapon.enabled = false;
+                break;
+            case "Archer":
+                archerWeapon.enabled = false;
+                break;
+            case "Mage":
+                mageWeapon.enabled = false;
+                break;
+        }
 
         StartCoroutine(ActivateEnemyAI());
 
