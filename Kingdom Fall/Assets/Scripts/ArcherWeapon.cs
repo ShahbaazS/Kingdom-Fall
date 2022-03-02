@@ -36,14 +36,14 @@ public class ArcherWeapon : MonoBehaviour
         if (Time.time > NextAttack){
             if (Input.GetButtonDown("Fire1") && ShootDirection()){
                 ShootArrow();
+                NextAttack = Time.time + AttackSpeed;
             }
-            NextAttack = Time.time + AttackSpeed;
         }
 
         if (Time.time > nextFireTime){
             if (Input.GetButtonDown("Fire2") ){
-            EnchantedArrow();
-            nextFireTime = Time.time + AbilityCooldown;
+                EnchantedArrow();
+                nextFireTime = Time.time + AbilityCooldown;
         }   
         }
     }

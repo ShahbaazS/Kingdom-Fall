@@ -36,8 +36,8 @@ public class MageWeapon : MonoBehaviour
         if (Time.time > NextAttack){
             if (Input.GetButtonDown("Fire1") && ShootDirection()){
                 ShootBall();
+                NextAttack = Time.time + AttackSpeed;
             }
-            NextAttack = Time.time + AttackSpeed;
         }
 
         if (Time.time > nextFireTime){
