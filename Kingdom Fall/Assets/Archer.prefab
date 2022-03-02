@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 6245130906314234621}
   - component: {fileID: 6245130906314234610}
   - component: {fileID: 6245130906314234611}
-  - component: {fileID: 6245130906314234608}
+  - component: {fileID: 8609258535257352216}
   m_Layer: 7
   m_Name: Archer
   m_TagString: Untagged
@@ -485,11 +485,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
   firePoint: {fileID: 6245130906558694577}
+  bulletSpeed: 10
   sightRange: 10
   shootingRange: 7
   maxSightRange: 15
   shootDelay: 1
---- !u!114 &6245130906314234608
+--- !u!114 &8609258535257352216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -498,7 +499,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6245130906314234609}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4fff119ff811c4a90bc1a2b58d30ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e8b41b5a67bdab4bae31ae6020e56e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 6245130906558694577}
@@ -506,6 +507,7 @@ MonoBehaviour:
   AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
   speed: 20
   Movement: {fileID: 6245130906314234622}
+  AttackSpeed: 0.7
   AbilityCooldown: 2
 --- !u!1 &6245130906324109210
 GameObject:

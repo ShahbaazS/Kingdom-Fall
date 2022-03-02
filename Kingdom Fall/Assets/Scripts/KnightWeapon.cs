@@ -9,7 +9,8 @@ public class KnightWeapon : MonoBehaviour
 
     //choose what to attack with
     public GameObject BulletPrefab;
-    public GameObject AbilityPrefab;
+    public GameObject SwordPrefab;
+    public Health health;
 
     //Position of camera and speed of bullet and ability
     private Vector3 MyPos;
@@ -19,7 +20,7 @@ public class KnightWeapon : MonoBehaviour
     public float duration = 5;
     public bool powering = false;
 
-    public float AttackSpeed = 0.7f;
+    public float AttackSpeed = 0.1f;
     private float NextAttack = 0;
 
     //cooldown on ability
@@ -30,7 +31,6 @@ public class KnightWeapon : MonoBehaviour
     void Start()
     {
         MyPos = Camera.main.WorldToScreenPoint(this.transform.position);
-
     }
 
     void Update()
@@ -38,24 +38,28 @@ public class KnightWeapon : MonoBehaviour
         if (Time.time > NextAttack){
             if (Input.GetButtonDown("Fire1") && ShootDirection()){
                 ThrowSword();
+                NextAttack = Time.time + AttackSpeed;
             }
-            NextAttack = Time.time + AttackSpeed;
         }
 
         if (Time.time > nextFireTime){
             if (Input.GetButtonDown("Fire2") ){ 
-                Sword sword = GetComponent<Sword>();
-                sword.PowerUp();
+                Sword swords = SwordPrefab.GetComponent<Sword>();
+                swords.PowerUp();
                 powering = true;
                 duration = 5;
-            nextFireTime = Time.time + AbilityCooldown;
+                nextFireTime = Time.time + AbilityCooldown;
         }   
+        }
+        if(powering == true){
         duration -= Time.deltaTime;
         if (duration <= 0){
-            Sword sword = GetComponent<Sword>();
-            sword.PowerDown();
+            Sword swords = SwordPrefab.GetComponent<Sword>();
+            swords.PowerDown();
+            powering = false;
         }
         }
+        
     }
 
     void ThrowSword(){

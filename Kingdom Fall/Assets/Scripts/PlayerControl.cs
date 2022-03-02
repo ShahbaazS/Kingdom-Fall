@@ -93,7 +93,6 @@ public class PlayerControl : MonoBehaviour
     {
         switch (activeEnemy) 
         {
-            default:
             case "Knight":
                 knightWeapon.enabled = true;
                 break;
@@ -102,6 +101,8 @@ public class PlayerControl : MonoBehaviour
                 break;
             case "Mage":
                 mageWeapon.enabled = true;
+                break;
+            default:
                 break;
         }
 
@@ -126,7 +127,6 @@ public class PlayerControl : MonoBehaviour
 
         switch (activeEnemy)
         {
-            default:
             case "Knight":
                 knightWeapon.enabled = false;
                 break;
@@ -135,6 +135,8 @@ public class PlayerControl : MonoBehaviour
                 break;
             case "Mage":
                 mageWeapon.enabled = false;
+                break;
+            default:
                 break;
         }
 
