@@ -53,12 +53,12 @@ public class PlayerControl : MonoBehaviour
             knightWeapon = GetComponent<KnightWeapon>();
             activeEnemy = "Knight";
         }
-        else if (GetComponent<KnightWeapon>() != null)
+        else if (GetComponent<MageWeapon>() != null)
         {
             mageWeapon = GetComponent<MageWeapon>();
             activeEnemy = "Mage";
         }
-        else if (GetComponent<KnightWeapon>() != null)
+        else if (GetComponent<ArcherWeapon>() != null)
         {
             archerWeapon = GetComponent<ArcherWeapon>();
             activeEnemy = "Archer";
