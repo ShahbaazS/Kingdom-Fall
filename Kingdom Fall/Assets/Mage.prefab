@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 8071067308000290582}
   - component: {fileID: 8071067308000290583}
   - component: {fileID: 8071067308000290580}
-  - component: {fileID: 8071067308000290581}
+  - component: {fileID: 8488285072286158603}
   m_Layer: 7
   m_Name: Mage
   m_TagString: Untagged
@@ -691,11 +691,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3800082992230481357, guid: 0b117a007777f1f40830d907a8b90bb7, type: 3}
   firePoint: {fileID: 8071067307346577448}
+  bulletSpeed: 10
   sightRange: 10
   shootingRange: 8
   maxSightRange: 8
   shootDelay: 1
---- !u!114 &8071067308000290581
+--- !u!114 &8488285072286158603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -704,14 +705,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8071067308000290578}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4fff119ff811c4a90bc1a2b58d30ff, type: 3}
+  m_Script: {fileID: 11500000, guid: e583528376ed1664fa5649379ffda85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 8071067307346577448}
   BulletPrefab: {fileID: 3800082992230481357, guid: 0b117a007777f1f40830d907a8b90bb7, type: 3}
-  AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
+  AbilityPrefab: {fileID: 0}
   speed: 20
   Movement: {fileID: 8071067308000290603}
+  AttackSpeed: 0.7
   AbilityCooldown: 2
 --- !u!1 &8071067308377943118
 GameObject:
