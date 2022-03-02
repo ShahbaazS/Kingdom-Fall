@@ -42,20 +42,24 @@ public class MageWeapon : MonoBehaviour
 
         if (Time.time > nextFireTime){
             if (Input.GetButtonDown("Fire2") ){
-                FireBallRain();
+                for(int i = 0; i < 5; i++){
+                    
+                }
             nextFireTime = Time.time + AbilityCooldown;
         }   
         }
     }
 
     void ShootBall(){
-        GameObject arrow = (GameObject)Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
+        GameObject FireBall = (GameObject)Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
         Vector3 direction = (Input.mousePosition - MyPos).normalized;
-        arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
+        FireBall.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 
     void FireBallRain(){
-        
+        GameObject FireBall = (GameObject)Instantiate(AbilityPrefab, FirePoint.position, Quaternion.identity);
+        Vector3 direction = (Input.mousePosition - MyPos).normalized;
+        FireBall.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 
     private bool ShootDirection()

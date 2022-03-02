@@ -10,7 +10,6 @@ public class KnightWeapon : MonoBehaviour
     //choose what to attack with
     public GameObject BulletPrefab;
     public GameObject SwordPrefab;
-    public Health health;
 
     //Position of camera and speed of bullet and ability
     private Vector3 MyPos;
