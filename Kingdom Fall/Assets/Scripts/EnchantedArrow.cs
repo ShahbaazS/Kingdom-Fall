@@ -7,7 +7,7 @@ public class EnchantedArrow : MonoBehaviour
 
     //damage of ability
     public int damage = 80;
-
+    public float speed;
     public Rigidbody2D rb;
     
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class EnchantedArrow : MonoBehaviour
 
     //detection of collision to deal damage
     void OnTriggerEnter2D(Collider2D hitInfo){
+        
         Health health = hitInfo.GetComponent<Health>();
         if (health != null){
             health.TakeDamage(damage);
