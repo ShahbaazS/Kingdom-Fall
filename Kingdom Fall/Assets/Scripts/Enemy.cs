@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
             if (playerControl.isPossessed)
             {
                 playerControl.Eject();
+                StartCoroutine(Die());
             }
         }
     }

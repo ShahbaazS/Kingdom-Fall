@@ -89,6 +89,8 @@ public class PlayerControl : MonoBehaviour
 
             resistStarted = true;
             StartCoroutine(Resist());
+
+        entity.GetComponent<PlayerPossession>().icon.fillAmount = 1;
         //}
     }
 
@@ -117,6 +119,11 @@ public class PlayerControl : MonoBehaviour
         // activates the player movement script on the enemy
         GetComponent<PlayerMovement>().enabled = true;
         virtualCamera.Follow = transform; // changes the camera target
+
+        entity.GetComponent<PlayerPossession>().nextPossessTime = Time.time + entity.GetComponent<PlayerPossession>().possessCooldown; // adds cooldown to the current time
+
+        entity.GetComponent<PlayerPossession>().isCooldown = true;
+        StartCoroutine(entity.GetComponent<PlayerPossession>().Cooldown());
     }
 
     public void Eject()
@@ -156,11 +163,6 @@ public class PlayerControl : MonoBehaviour
         virtualCamera.Follow = entity.transform; // changes the camera target
 
         isPossessed = false;
-        entity.GetComponent<PlayerPossession>().nextPossessTime = Time.time + entity.GetComponent<PlayerPossession>().possessCooldown; // adds cooldown to the current time
-
-        entity.GetComponent<PlayerPossession>().isCooldown = true;
-        entity.GetComponent<PlayerPossession>().icon.fillAmount = 1;
-        StartCoroutine(entity.GetComponent<PlayerPossession>().Cooldown());
     }
 
     /*IEnumerator Cooldown()
@@ -215,6 +217,10 @@ public class PlayerControl : MonoBehaviour
 
                 resist = 5;
                 Eject();
+                entity.GetComponent<PlayerPossession>().nextPossessTime = Time.time + entity.GetComponent<PlayerPossession>().possessCooldown; // adds cooldown to the current time
+
+                entity.GetComponent<PlayerPossession>().isCooldown = true;
+                StartCoroutine(entity.GetComponent<PlayerPossession>().Cooldown());
             }
 
             yield return null;    // waits one frame
@@ -223,7 +229,7 @@ public class PlayerControl : MonoBehaviour
 
     IEnumerator ActivateEnemyAI()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         enemyPatrol.enabled = true;
         enemyAI.enabled = true;
     }
