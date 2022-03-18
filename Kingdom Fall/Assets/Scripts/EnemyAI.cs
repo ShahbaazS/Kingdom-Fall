@@ -98,9 +98,12 @@ public class EnemyAI : MonoBehaviour
 
     void Shoot()
     {
-        GameObject Bullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        Vector3 direction = (player.transform.position - firePoint.transform.position).normalized;
-        Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
+        if (ShootDirection())
+        {
+            GameObject Bullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            Vector3 direction = (player.transform.position - firePoint.transform.position).normalized;
+            Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
+        }
     }
 
     void FindTarget()
@@ -129,5 +132,20 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
         Gizmos.DrawWireSphere(transform.position, shootingRange);
         Gizmos.DrawWireSphere(transform.position, maxSightRange);
+    }
+
+    bool ShootDirection()
+    {
+        if (enemyPatrol.isFacingRight() && player.transform.position.x > firePoint.position.x)
+        {
+            return true;
+        }
+        else if(!enemyPatrol.isFacingRight() && player.transform.position.x < firePoint.position.x){
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

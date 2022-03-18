@@ -18,14 +18,14 @@ public class PlayerControl : MonoBehaviour
     MageWeapon mageWeapon;
     ArcherWeapon archerWeapon;
 
-    // cooldown ui stuff
+    /*// cooldown ui stuff
     public Image icon;
     bool isCooldown = false;
 
     // cooldown parameters
     public float possessCooldown = 10f;
     float nextPossessTime = 0f;
-
+    */
     public bool isPossessed = false;
 
     //resist parameters
@@ -65,17 +65,20 @@ public class PlayerControl : MonoBehaviour
         }
 
         struggleBar = struggleUI.GetComponentInChildren<StruggleBar>();
-        icon.fillAmount = 0;
+        entity.GetComponent<PlayerPossession>().icon.fillAmount = 0;
         struggleUI.SetActive(false);
     }
 
     public void StartPossession()
     {
         // makes sure that the cooldown is over before the player can possess
-        if (Time.time >= nextPossessTime)
-        {
+        //if (Time.time >= nextPossessTime)
+        //{
             gameObject.tag = "Player";
             entity.tag = "Untagged";
+
+            enemyAI.enabled = false;
+            enemyPatrol.enabled = false;
 
             struggleUI.SetActive(true);
             struggleBar.SetMaxStruggle(possessAmount);
@@ -86,7 +89,7 @@ public class PlayerControl : MonoBehaviour
 
             resistStarted = true;
             StartCoroutine(Resist());
-        }
+        //}
     }
 
     void TakeOver()
@@ -106,9 +109,6 @@ public class PlayerControl : MonoBehaviour
                 break;
         }
 
-        enemyAI.enabled = false;
-        enemyPatrol.enabled = false;
-
         initialRotation = transform.rotation;
         struggleUI.SetActive(false);
 
@@ -117,7 +117,6 @@ public class PlayerControl : MonoBehaviour
         // activates the player movement script on the enemy
         GetComponent<PlayerMovement>().enabled = true;
         virtualCamera.Follow = transform; // changes the camera target
-        nextPossessTime = Time.time + possessCooldown; // adds cooldown to the current time
     }
 
     public void Eject()
@@ -157,14 +156,14 @@ public class PlayerControl : MonoBehaviour
         virtualCamera.Follow = entity.transform; // changes the camera target
 
         isPossessed = false;
-        nextPossessTime = Time.time + possessCooldown; // adds cooldown to the current time
+        entity.GetComponent<PlayerPossession>().nextPossessTime = Time.time + entity.GetComponent<PlayerPossession>().possessCooldown; // adds cooldown to the current time
 
-        isCooldown = true;
-        icon.fillAmount = 1;
-        StartCoroutine(Cooldown());
+        entity.GetComponent<PlayerPossession>().isCooldown = true;
+        entity.GetComponent<PlayerPossession>().icon.fillAmount = 1;
+        StartCoroutine(entity.GetComponent<PlayerPossession>().Cooldown());
     }
 
-    IEnumerator Cooldown()
+    /*IEnumerator Cooldown()
     {
         // while the cooldown is not over
         while (isCooldown)
@@ -179,7 +178,7 @@ public class PlayerControl : MonoBehaviour
 
             yield return null;    // waits one frame
         }
-    }
+    }*/
 
     IEnumerator Resist()
     {
@@ -209,7 +208,7 @@ public class PlayerControl : MonoBehaviour
             }
 
             // if enemy wins
-            if (resist <= 0)
+            if (resist <= 0 && resistStarted)
             {
                 isPossessed = false;
                 resistStarted = false;

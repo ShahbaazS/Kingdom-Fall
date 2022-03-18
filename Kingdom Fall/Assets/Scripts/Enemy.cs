@@ -30,6 +30,11 @@ public class Enemy : MonoBehaviour
         {
             playerControl.Eject();
         }
+        else if (playerControl.resistStarted)
+        {
+            playerControl.resistStarted = false;
+            playerControl.Eject();
+        }
 
         // disables everything except Enemy script and PlayerControlScript
         Collider2D[] colliders = GetComponents<Collider2D>();
@@ -44,7 +49,7 @@ public class Enemy : MonoBehaviour
         transform.Find("Model").gameObject.SetActive(false);
 
         // waits until cooldown is over
-        yield return new WaitForSeconds(playerControl.possessCooldown);
+        yield return new WaitForSeconds(10f);
         Destroy(gameObject); // destroys
     }
 }

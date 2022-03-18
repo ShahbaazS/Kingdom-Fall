@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPossession : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class PlayerPossession : MonoBehaviour
 
     // possession parameters
     float possessRadius = 0.25f;
+
+    public float possessCooldown = 10f;
+    public float nextPossessTime = 0f;
+
+    // cooldown ui stuff
+    public Image icon;
+    public bool isCooldown = false;
+
 
     Collider2D currentEnemy;
 
@@ -37,7 +46,26 @@ public class PlayerPossession : MonoBehaviour
         {
             // takes the first enemy to be hit and lets the player take control
             currentEnemy = hitEnemies[0];
+            if(Time.time > nextPossessTime)
             currentEnemy.GetComponent<PlayerControl>().StartPossession();
+        }
+    }
+
+    public IEnumerator Cooldown()
+    {
+        // while the cooldown is not over
+        while (isCooldown)
+        {
+            icon.fillAmount -= 1 / possessCooldown * Time.deltaTime;
+
+            if (icon.fillAmount <= 0)
+            {
+                icon.fillAmount = 0;
+                isCooldown = false;
+                nextPossessTime = Time.time + possessCooldown;
+            }
+
+            yield return null;    // waits one frame
         }
     }
 
