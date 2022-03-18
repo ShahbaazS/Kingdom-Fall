@@ -14,6 +14,7 @@ public class ArcherWeapon : MonoBehaviour
     //Position of camera and speed of bullet and ability
     private Vector3 MyPos;
     public float speed = 20f;
+    public int Arrows = 10;
 
     public PlayerMovement Movement;
 
@@ -34,8 +35,9 @@ public class ArcherWeapon : MonoBehaviour
     void Update()
     {
         if (Time.time > NextAttack){
-            if (Input.GetButtonDown("Fire1") && ShootDirection()){
+            if (Input.GetButtonDown("Fire1") && ShootDirection() && Arrows > 0){
                 ShootArrow();
+                Arrows -= 1;
                 NextAttack = Time.time + AttackSpeed;
             }
         }
