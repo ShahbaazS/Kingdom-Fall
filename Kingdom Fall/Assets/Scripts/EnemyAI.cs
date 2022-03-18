@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     public float maxSightRange = 15f;
 
     float nextShootTime = 0;
-    [SerializeField] float shootDelay = 1f;
+    [SerializeField] float shootDelay = 2f;
 
     private void Awake()
     {

@@ -29,7 +29,8 @@ public class PlayerPossession : MonoBehaviour
         // on pressing "x" (can be changed later), you can possess enemies
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Possess();
+            if (Time.time > nextPossessTime)
+                Possess();
         }
     }
 
@@ -46,7 +47,6 @@ public class PlayerPossession : MonoBehaviour
         {
             // takes the first enemy to be hit and lets the player take control
             currentEnemy = hitEnemies[0];
-            if(Time.time > nextPossessTime)
             currentEnemy.GetComponent<PlayerControl>().StartPossession();
         }
     }
@@ -62,7 +62,6 @@ public class PlayerPossession : MonoBehaviour
             {
                 icon.fillAmount = 0;
                 isCooldown = false;
-                nextPossessTime = Time.time + possessCooldown;
             }
 
             yield return null;    // waits one frame
