@@ -10,7 +10,7 @@ public class Sword : MonoBehaviour
     public Rigidbody2D rb;
 
     //time until bullet disappears (range of bullet)
-    public float time = 0.4f;
+    public float time = 0.01f;
     
 
     // Start is called before the first frame update

@@ -7952,36 +7952,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1071628532622510575, guid: 3d260544bf34a4f44bd7bf0f0cf5051a, type: 3}
   m_PrefabInstance: {fileID: 1071628532998768084}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &447990844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447990842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8b41b5a67bdab4bae31ae6020e56e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirePoint: {fileID: 1475938659}
-  BulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
-  AbilityPrefab: {fileID: 739192704891854466, guid: 9b961ea788c899b4fba6697ecc0e1d62, type: 3}
-  speed: 20
-  Movement: {fileID: 447990847}
-  AttackSpeed: 0.7
-  AbilityCooldown: 2
---- !u!114 &447990847 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1071628532622510571, guid: 3d260544bf34a4f44bd7bf0f0cf5051a, type: 3}
-  m_PrefabInstance: {fileID: 1071628532998768084}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447990842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 929634fb565e1b9428a4682fd66d0558, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &456686258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8878,11 +8848,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154722221}
   m_CullTransparentMesh: 1
---- !u!4 &1475938659 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1071628532729529193, guid: 3d260544bf34a4f44bd7bf0f0cf5051a, type: 3}
-  m_PrefabInstance: {fileID: 1071628532998768084}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1555336520
 GameObject:
   m_ObjectHideFlags: 3
@@ -9723,6 +9688,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 165652403}
+    - target: {fileID: 5944618500498166861, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: SwordPrefab
+      value: 
+      objectReference: {fileID: 6680870607119235148, guid: 48e98e0a7698b364aab6af4cc0c66aee, type: 3}
     - target: {fileID: 7436601014707943984, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9836,6 +9805,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8609258535257352216, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: AbilityPrefab
+      value: 
+      objectReference: {fileID: 739192704891854466, guid: 9b961ea788c899b4fba6697ecc0e1d62, type: 3}
     m_RemovedComponents:
     - {fileID: 6245130906314234608, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}

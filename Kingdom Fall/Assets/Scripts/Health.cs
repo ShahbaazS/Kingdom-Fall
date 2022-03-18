@@ -33,15 +33,6 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Increase(){
-        health = health + 30;
-        MaxHealth = MaxHealth + 30;
-    }
-
-    public void Decrease(){
-        MaxHealth = MaxHealth - 30;
-    }
-
     //returns the current health percentage
     float CalculateHealth(){
         return health / MaxHealth;
