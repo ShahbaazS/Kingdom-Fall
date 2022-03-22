@@ -120,7 +120,7 @@ public class PlayerControl : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = true;
         virtualCamera.Follow = transform; // changes the camera target
 
-        entity.GetComponent<PlayerPossession>().nextPossessTime = Time.time + entity.GetComponent<PlayerPossession>().possessCooldown; // adds cooldown to the current time
+        entity.GetComponent<PlayerPossession>().AddNextPossessTime();
 
         entity.GetComponent<PlayerPossession>().isCooldown = true;
         StartCoroutine(entity.GetComponent<PlayerPossession>().Cooldown());
@@ -163,6 +163,14 @@ public class PlayerControl : MonoBehaviour
         virtualCamera.Follow = entity.transform; // changes the camera target
 
         isPossessed = false;
+
+        if (resistStarted)
+        {
+            entity.GetComponent<PlayerPossession>().AddNextPossessTime();
+            resistStarted = false;
+            entity.GetComponent<PlayerPossession>().isCooldown = true;
+            StartCoroutine(entity.GetComponent<PlayerPossession>().Cooldown());
+        }
     }
 
     /*IEnumerator Cooldown()
@@ -213,14 +221,10 @@ public class PlayerControl : MonoBehaviour
             if (resist <= 0 && resistStarted)
             {
                 isPossessed = false;
-                resistStarted = false;
+                //resistStarted = false;
 
                 resist = 5;
                 Eject();
-                entity.GetComponent<PlayerPossession>().nextPossessTime = Time.time + entity.GetComponent<PlayerPossession>().possessCooldown; // adds cooldown to the current time
-
-                entity.GetComponent<PlayerPossession>().isCooldown = true;
-                StartCoroutine(entity.GetComponent<PlayerPossession>().Cooldown());
             }
 
             yield return null;    // waits one frame

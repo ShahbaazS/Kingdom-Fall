@@ -68,4 +68,9 @@ public class PlayerPossession : MonoBehaviour
         }
     }
 
+    public void AddNextPossessTime()
+    {
+        nextPossessTime = Time.time + possessCooldown; // adds cooldown to the current time
+    }
+
 }
