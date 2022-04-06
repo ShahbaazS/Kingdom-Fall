@@ -8,6 +8,8 @@ public class Arrow : MonoBehaviour
     public float speed;
     public int damage = 40;
     public Rigidbody2D rb;
+    
+    private Vector3 mousePos;
 
     //time until bullet disappears (range of bullet)
     public float time = 15f;

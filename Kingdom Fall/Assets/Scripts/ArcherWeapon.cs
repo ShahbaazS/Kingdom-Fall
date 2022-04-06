@@ -55,12 +55,19 @@ public class ArcherWeapon : MonoBehaviour
     void ShootArrow(){
         GameObject arrow = (GameObject)Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
         Vector3 direction = (Input.mousePosition - MyPos).normalized;
+        if(Movement.facingRight == false){
+            arrow.transform.Rotate(0, 180, 0);
+        }
         arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 
     void EnchantedArrow (){
         GameObject Ability = (GameObject)Instantiate(AbilityPrefab, FirePoint.position, Quaternion.identity);
         Vector3 direction = (Input.mousePosition - MyPos).normalized;
+        if(Movement.facingRight == false){
+            Ability.transform.Rotate(0, 180, 0);
+        }
+        Ability.transform.Rotate(direction);
         Ability.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 

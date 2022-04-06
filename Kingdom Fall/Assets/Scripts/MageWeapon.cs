@@ -54,12 +54,18 @@ public class MageWeapon : MonoBehaviour
     void ShootBall(){
         GameObject FireBall = (GameObject)Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
         Vector3 direction = (Input.mousePosition - MyPos).normalized;
+        if(Movement.facingRight == false){
+            FireBall.transform.Rotate(0, 180, 0);
+        }
         FireBall.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 
     void FireBallRain(){
         GameObject FireBall = (GameObject)Instantiate(AbilityPrefab, FirePoint.position, Quaternion.identity);
         Vector3 direction = (Input.mousePosition - MyPos).normalized;
+        if(Movement.facingRight == false){
+            FireBall.transform.Rotate(0, 180, 0);
+        }
         FireBall.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 

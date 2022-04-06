@@ -65,6 +65,9 @@ public class KnightWeapon : MonoBehaviour
     void ThrowSword(){
         GameObject sword = (GameObject)Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
         Vector3 direction = (Input.mousePosition - MyPos).normalized;
+        if(Movement.facingRight == false){
+            sword.transform.Rotate(0, 180, 0);
+        }
         sword.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
 
