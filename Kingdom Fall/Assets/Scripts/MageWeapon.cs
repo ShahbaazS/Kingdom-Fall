@@ -33,6 +33,7 @@ public class MageWeapon : MonoBehaviour
 
     void Update()
     {
+        MyPos = Camera.main.WorldToScreenPoint(this.transform.position); 
         if (Time.time > NextAttack){
             if (Input.GetButtonDown("Fire1") && ShootDirection()){
                 ShootBall();
