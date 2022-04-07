@@ -102,6 +102,10 @@ public class EnemyAI : MonoBehaviour
         {
             GameObject Bullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             Vector3 direction = (player.transform.position - firePoint.transform.position).normalized;
+            if (enemyPatrol.isFacingRight() == false)
+            {
+                Bullet.transform.Rotate(0, 180, 0);
+            }
             Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * bulletSpeed;
         }
     }

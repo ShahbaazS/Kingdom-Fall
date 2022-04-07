@@ -14,7 +14,7 @@ public class EnemyPatrol : MonoBehaviour
     // Raycast to determine if the player is on the ground
     [SerializeField] Transform checkGroundPoint;
     RaycastHit2D hit;
-    float raycastLength = 2f;
+    float raycastLength = 0.5f;
 
     // movement parameters
     float moveSpeed = 100f;
