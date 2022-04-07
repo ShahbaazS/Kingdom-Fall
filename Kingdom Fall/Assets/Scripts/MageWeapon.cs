@@ -28,7 +28,6 @@ public class MageWeapon : MonoBehaviour
     void Start()
     {
         MyPos = Camera.main.WorldToScreenPoint(this.transform.position);
-
     }
 
     void Update()
@@ -43,9 +42,7 @@ public class MageWeapon : MonoBehaviour
 
         if (Time.time > nextFireTime){
             if (Input.GetButtonDown("Fire2") ){
-                for(int i = 0; i < 5; i++){
-                    
-                }
+                StartCoroutine(RapidFire());
             nextFireTime = Time.time + AbilityCooldown;
         }   
         }
@@ -59,14 +56,13 @@ public class MageWeapon : MonoBehaviour
         }
         FireBall.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
     }
+    
 
-    void FireBallRain(){
-        GameObject FireBall = (GameObject)Instantiate(AbilityPrefab, FirePoint.position, Quaternion.identity);
-        Vector3 direction = (Input.mousePosition - MyPos).normalized;
-        if(Movement.facingRight == false){
-            FireBall.transform.Rotate(0, 180, 0);
-        }
-        FireBall.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x, direction.y) * speed;
+    IEnumerator RapidFire()
+    {
+        InvokeRepeating("ShootBall", 0, 0.1f);
+        yield return new WaitForSeconds(0.2f);
+        CancelInvoke("ShootBall");
     }
 
     private bool ShootDirection()
