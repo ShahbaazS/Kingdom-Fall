@@ -26,6 +26,8 @@ public class EnemyPatrol : MonoBehaviour
     bool canMove = true;
     public bool isBound = true;
 
+    float currentTime = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,7 +73,11 @@ public class EnemyPatrol : MonoBehaviour
     {
         if(transform.position.x <= minBound || transform.position.x >= maxBound)
         {
-            ChangeDirection();
+            if(Time.time > currentTime)
+            {
+                ChangeDirection();
+                currentTime += 1;
+            }
         }
     }
 

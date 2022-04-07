@@ -45,7 +45,7 @@ public class EnemyAI : MonoBehaviour
             {
                 default:
                 case State.Patrolling:
-                    GenerateBound();
+          
                     FindTarget();
                     break;
                 case State.ChaseTarget:
@@ -72,6 +72,7 @@ public class EnemyAI : MonoBehaviour
 
                     if(Vector2.Distance(transform.position, player.position) > maxSightRange)
                     {
+                        GenerateBound();
                         state = State.Patrolling;
                     }
                     break;
