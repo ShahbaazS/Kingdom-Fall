@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa58ce6407b7bb940b4dd3ff5c7cfb20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewGameScene: EnemyScene
+  NewGameScene: DemoLevel
 --- !u!1 &182228007
 GameObject:
   m_ObjectHideFlags: 0
