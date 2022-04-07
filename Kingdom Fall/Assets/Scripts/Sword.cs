@@ -11,12 +11,6 @@ public class Sword : MonoBehaviour
 
     //time until bullet disappears (range of bullet)
     public float time = 0.1f;
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     public void PowerUp(){
         damage = 70;
@@ -36,10 +30,11 @@ public class Sword : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo){
 
         Health health = hitInfo.GetComponent<Health>();
-        if (health != null){
-            health.TakeDamage(damage);
+        if(hitInfo.gameObject.layer == LayerMask.NameToLayer("Enemy")){
+            if (health != null){
+                health.TakeDamage(damage);
+            }
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }

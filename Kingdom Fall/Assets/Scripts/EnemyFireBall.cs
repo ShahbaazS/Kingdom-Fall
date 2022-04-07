@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class EnemyFireBall : MonoBehaviour
 {
     //damage of Arrow 
     public float speed;
@@ -20,7 +20,7 @@ public class FireBall : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo){
 
         Health health = hitInfo.GetComponent<Health>();
-        if(hitInfo.gameObject.layer == LayerMask.NameToLayer("Enemy")){
+        if(hitInfo.gameObject.layer == LayerMask.NameToLayer("Player")){
             if (health != null){
                 health.TakeDamage(damage);
             }

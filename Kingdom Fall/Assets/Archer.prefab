@@ -420,8 +420,6 @@ MonoBehaviour:
   virtualCamera: {fileID: 0}
   entity: {fileID: 0}
   struggleUI: {fileID: 6245130906192128073}
-  icon: {fileID: 0}
-  possessCooldown: 10
   isPossessed: 0
   resistStarted: 0
 --- !u!114 &6245130906314234620
@@ -483,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f15a80b319e66f4bb0ac54bc6183096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
+  bulletPrefab: {fileID: 4448321110270205923, guid: b7a4f15887151ca45843c6c9b6f3a461, type: 3}
   firePoint: {fileID: 6245130906558694577}
   bulletSpeed: 10
   sightRange: 10
@@ -506,6 +504,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
   AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
   speed: 20
+  Arrows: 10
   Movement: {fileID: 6245130906314234622}
   AttackSpeed: 0.7
   AbilityCooldown: 2

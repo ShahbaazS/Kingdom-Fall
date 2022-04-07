@@ -12,12 +12,6 @@ public class Arrow : MonoBehaviour
 
     //time until bullet disappears (range of bullet)
     public float time = 15f;
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     void Update(){
         Destroy(this.gameObject, time);
@@ -27,10 +21,12 @@ public class Arrow : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo){
 
         Health health = hitInfo.GetComponent<Health>();
-        if (health != null){
-            health.TakeDamage(damage);
-        }
 
-        Destroy(gameObject);
+        if(hitInfo.gameObject.layer == LayerMask.NameToLayer("Enemy")){
+            if (health != null){
+                health.TakeDamage(damage);
+            }
+            Destroy(gameObject);
+        }
     }
 }

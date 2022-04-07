@@ -626,8 +626,6 @@ MonoBehaviour:
   virtualCamera: {fileID: 0}
   entity: {fileID: 0}
   struggleUI: {fileID: 8071067307914887364}
-  icon: {fileID: 0}
-  possessCooldown: 10
   isPossessed: 0
   resistStarted: 0
 --- !u!114 &8071067308000290601
@@ -689,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f15a80b319e66f4bb0ac54bc6183096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3800082992230481357, guid: 0b117a007777f1f40830d907a8b90bb7, type: 3}
+  bulletPrefab: {fileID: 1697142053292793974, guid: 0673f2609bb25764fbe255b70132f617, type: 3}
   firePoint: {fileID: 8071067307346577448}
   bulletSpeed: 10
   sightRange: 10

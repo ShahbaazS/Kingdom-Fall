@@ -114,6 +114,8 @@ public class PlayerControl : MonoBehaviour
         initialRotation = transform.rotation;
         struggleUI.SetActive(false);
 
+        gameObject.layer = 8;
+
         GetComponent<PlayerMovement>().facingRight = enemyPatrol.isFacingRight();
 
         // activates the player movement script on the enemy
