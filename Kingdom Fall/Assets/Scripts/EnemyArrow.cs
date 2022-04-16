@@ -10,7 +10,7 @@ public class EnemyArrow : MonoBehaviour
     public Rigidbody2D rb;
 
     //time until bullet disappears (range of bullet)
-    public float time = 15f;
+    public float time = 1.5f;
 
     void Update(){
         Destroy(this.gameObject, time);

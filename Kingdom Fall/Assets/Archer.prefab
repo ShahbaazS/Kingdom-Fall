@@ -404,6 +404,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpPoint: {fileID: 6245130906324109189}
+  EndLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  win: {fileID: 0}
   facingRight: 1
 --- !u!114 &6245130906314234623
 MonoBehaviour:
@@ -446,8 +450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9823e6edaa81aeb41b069f258f5b8e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  MaxHealth: 100
+  health: 120
+  MaxHealth: 120
   HealthUI: {fileID: 1450112295560850503}
   HealthBar: {fileID: 1450112295720710099}
   GameOver: {fileID: 0}
@@ -502,12 +506,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 6245130906558694577}
   BulletPrefab: {fileID: 8171416559109047928, guid: 033a13c559669164d957e9019baa825d, type: 3}
-  AbilityPrefab: {fileID: 2882966658152013049, guid: db3094bd4a5827b40861bb1b1fbed920, type: 3}
+  AbilityPrefab: {fileID: 739192704891854466, guid: 9b961ea788c899b4fba6697ecc0e1d62, type: 3}
   speed: 20
   Arrows: 10
   Movement: {fileID: 6245130906314234622}
-  AttackSpeed: 0.7
-  AbilityCooldown: 2
+  AttackSpeed: 0.6
+  AbilityCooldown: 10
 --- !u!1 &6245130906324109210
 GameObject:
   m_ObjectHideFlags: 0

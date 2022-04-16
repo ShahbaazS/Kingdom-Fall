@@ -147,4 +147,4 @@ MonoBehaviour:
   speed: 0
   damage: 40
   rb: {fileID: 7679873443930334829}
-  time: 0.1
+  time: 0.2
