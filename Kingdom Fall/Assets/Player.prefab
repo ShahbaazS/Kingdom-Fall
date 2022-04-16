@@ -155,6 +155,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpPoint: {fileID: 1071628533079701305}
+  EndLayer:
+    serializedVersion: 2
+    m_Bits: 512
   facingRight: 1
 --- !u!114 &1071628532622510570
 MonoBehaviour:
@@ -172,6 +175,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   possessPoint: {fileID: 1071628533840282299}
+  possessCooldown: 10
+  nextPossessTime: 0
+  icon: {fileID: 0}
+  isCooldown: 0
 --- !u!114 &1071628532622510569
 MonoBehaviour:
   m_ObjectHideFlags: 0

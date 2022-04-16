@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
     // For detecting objects in the Ground layer (assigned in inspector)
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform jumpPoint;
+    [SerializeField] LayerMask EndLayer;
 
+    public Win win;
     // rigidbody for physics
     Rigidbody2D rb;
 
@@ -47,6 +49,9 @@ public class PlayerMovement : MonoBehaviour
             facingRight = false;
         }
 
+        if(Input.GetKeyDown(KeyCode.E) && isAtEnd()){
+            win.Setup();
+        }
     }
 
     private void FixedUpdate()
@@ -71,4 +76,14 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
+    bool isAtEnd()
+    {
+        hit = Physics2D.Raycast(jumpPoint.position, Vector2.down, raycastLength, EndLayer);
+
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
+    }
 }
