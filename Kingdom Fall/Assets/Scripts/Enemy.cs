@@ -8,9 +8,12 @@ public class Enemy : MonoBehaviour
     // reference to player control script
     PlayerControl playerControl;
 
+    TutorialScript tutorialScript;
+
     void Start()
     {
         playerControl = GetComponent<PlayerControl>();
+        tutorialScript = GetComponent<TutorialScript>();
     }
 
     void Update()
@@ -19,8 +22,16 @@ public class Enemy : MonoBehaviour
         {
             if (playerControl.isPossessed)
             {
-                playerControl.Eject();
-                StartCoroutine(Die());
+                if(tutorialScript && tutorialScript.index == 7)
+                {
+                    playerControl.Eject();
+                    StartCoroutine(Die());
+                }
+                else if(tutorialScript == null){
+                    playerControl.Eject();
+                    StartCoroutine(Die());
+                }
+                
             }
         }
     }
@@ -43,8 +54,10 @@ public class Enemy : MonoBehaviour
             collider.enabled = false;
         }
         GetComponent<Renderer>().enabled = false;
-        GetComponent<EnemyPatrol>().enabled = false;
-        GetComponent<EnemyAI>().enabled = false;
+        if(GetComponent<EnemyPatrol>())
+            GetComponent<EnemyPatrol>().enabled = false;
+        if (GetComponent<EnemyAI>())
+            GetComponent<EnemyAI>().enabled = false;
         GetComponent<Health>().enabled = false;
         transform.Find("HealthUI").gameObject.SetActive(false);
         transform.Find("Model").gameObject.SetActive(false);

@@ -74,11 +74,13 @@ public class PlayerControl : MonoBehaviour
         // makes sure that the cooldown is over before the player can possess
         //if (Time.time >= nextPossessTime)
         //{
-            gameObject.tag = "Player";
+            //gameObject.tag = "Player";
             entity.tag = "Untagged";
 
-            enemyAI.enabled = false;
-            enemyPatrol.enabled = false;
+            if(enemyAI)
+                enemyAI.enabled = false;
+            if (enemyPatrol)
+                enemyPatrol.enabled = false;
 
             struggleUI.SetActive(true);
             struggleBar.SetMaxStruggle(possessAmount);
@@ -96,6 +98,9 @@ public class PlayerControl : MonoBehaviour
 
     void TakeOver()
     {
+        gameObject.tag = "Player";
+        entity.tag = "Untagged";
+
         switch (activeEnemy) 
         {
             case "Knight":
@@ -116,7 +121,8 @@ public class PlayerControl : MonoBehaviour
 
         gameObject.layer = 8;
 
-        GetComponent<PlayerMovement>().facingRight = enemyPatrol.isFacingRight();
+        if(enemyPatrol)
+            GetComponent<PlayerMovement>().facingRight = enemyPatrol.isFacingRight();
 
         // activates the player movement script on the enemy
         GetComponent<PlayerMovement>().enabled = true;
@@ -148,7 +154,7 @@ public class PlayerControl : MonoBehaviour
                 break;
         }
 
-        StartCoroutine(ActivateEnemyAI());
+        //StartCoroutine(ActivateEnemyAI());
 
         transform.rotation = initialRotation;
         struggleUI.SetActive(false);
