@@ -12,6 +12,8 @@ public class EnemyArrow : MonoBehaviour
     //time until bullet disappears (range of bullet)
     public float time = 1.5f;
 
+    float currentTime = 0f;
+
     void Update(){
         Destroy(this.gameObject, time);
     }
@@ -23,7 +25,11 @@ public class EnemyArrow : MonoBehaviour
 
         if(hitInfo.gameObject.layer == LayerMask.NameToLayer("Player")){
             if (health != null){
-                health.TakeDamage(damage);
+                if (Time.time > currentTime)
+                {
+                    health.TakeDamage(damage);
+                    currentTime = Time.time + 1;
+                }
             }
             Destroy(gameObject);
         }

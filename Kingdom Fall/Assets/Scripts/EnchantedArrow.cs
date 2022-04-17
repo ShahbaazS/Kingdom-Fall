@@ -9,7 +9,9 @@ public class EnchantedArrow : MonoBehaviour
     public int damage = 80;
     public float speed;
     public Rigidbody2D rb;
-    
+
+    float currentTime = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,11 @@ public class EnchantedArrow : MonoBehaviour
         
         Health health = hitInfo.GetComponent<Health>();
         if (health != null){
-            health.TakeDamage(damage);
+            if (Time.time > currentTime)
+            {
+                health.TakeDamage(damage);
+                currentTime = Time.time + 1;
+            }
         }
 
         Destroy(gameObject, 5);

@@ -76,7 +76,7 @@ public class EnemyPatrol : MonoBehaviour
             if(Time.time > currentTime)
             {
                 ChangeDirection();
-                currentTime += 1;
+                currentTime = Time.time + 1;
             }
         }
     }

@@ -12,6 +12,8 @@ public class EnemySword : MonoBehaviour
     //time until bullet disappears (range of bullet)
     public float time = 0.1f;
 
+    float currentTime = 0f;
+
     public void PowerUp(){
         damage = 70;
         time = 0.6f;
@@ -32,7 +34,11 @@ public class EnemySword : MonoBehaviour
         Health health = hitInfo.GetComponent<Health>();
         if(hitInfo.gameObject.layer == LayerMask.NameToLayer("Player")){
             if (health != null){
-                health.TakeDamage(damage);
+                if (Time.time > currentTime)
+                {
+                    health.TakeDamage(damage);
+                    currentTime = Time.time + 1;
+                }
             }
             Destroy(gameObject);
         }
