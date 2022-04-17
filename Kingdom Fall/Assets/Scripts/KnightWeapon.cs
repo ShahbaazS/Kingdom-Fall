@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KnightWeapon : MonoBehaviour
 {
@@ -26,10 +27,15 @@ public class KnightWeapon : MonoBehaviour
     public float AbilityCooldown = 8;
     private float nextFireTime = 0;
 
+    //cooldown ui
+    public Image icon;
+    public bool isCooldown = false;
+
     // Update is called once per frame
     void Start()
     {
         MyPos = Camera.main.WorldToScreenPoint(this.transform.position);
+        icon.fillAmount = 0;
     }
 
     void Update()
@@ -49,7 +55,11 @@ public class KnightWeapon : MonoBehaviour
                 powering = true;
                 duration = 5;
                 nextFireTime = Time.time + AbilityCooldown;
-        }   
+
+                icon.fillAmount = 1;
+                isCooldown = true;
+                StartCoroutine(Cooldown());
+            }   
         }
         if(powering == true){
         duration -= Time.deltaTime;
@@ -82,5 +92,22 @@ public class KnightWeapon : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public IEnumerator Cooldown()
+    {
+        // while the cooldown is not over
+        while (isCooldown)
+        {
+            icon.fillAmount -= 1 / AbilityCooldown * Time.deltaTime;
+
+            if (icon.fillAmount <= 0)
+            {
+                icon.fillAmount = 0;
+                isCooldown = false;
+            }
+
+            yield return null;    // waits one frame
+        }
     }
 }

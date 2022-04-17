@@ -9,6 +9,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera virtualCamera;
     [SerializeField] GameObject entity; // player
     [SerializeField] GameObject struggleUI;
+    [SerializeField] GameObject abilityUI;
+    [SerializeField] Sprite[] sprites;
 
     EnemyAI enemyAI;
     EnemyPatrol enemyPatrol;
@@ -101,16 +103,24 @@ public class PlayerControl : MonoBehaviour
         gameObject.tag = "Player";
         entity.tag = "Untagged";
 
+        abilityUI.SetActive(true);
+
         switch (activeEnemy) 
         {
             case "Knight":
                 knightWeapon.enabled = true;
+                abilityUI.GetComponent<Image>().sprite = sprites[0];
+                knightWeapon.icon.sprite = sprites[0];
                 break;
             case "Archer":
                 archerWeapon.enabled = true;
+                abilityUI.GetComponent<Image>().sprite = sprites[1];
+                archerWeapon.icon.sprite = sprites[1];
                 break;
             case "Mage":
                 mageWeapon.enabled = true;
+                abilityUI.GetComponent<Image>().sprite = sprites[2];
+                mageWeapon.icon.sprite = sprites[2];
                 break;
             default:
                 break;
@@ -138,6 +148,8 @@ public class PlayerControl : MonoBehaviour
     {
         gameObject.tag = "Untagged";
         entity.tag = "Player";
+
+        abilityUI.SetActive(false);
 
         switch (activeEnemy)
         {

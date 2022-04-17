@@ -8,9 +8,12 @@ public class WallScript : MonoBehaviour
 
     void Update()
     {
-        if(entity.tag == "Player")
+        if (entity)
         {
-            Physics2D.IgnoreCollision(entity.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+            if (entity.tag == "Player")
+            {
+                Physics2D.IgnoreCollision(entity.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+            }
         }
     }
 }
