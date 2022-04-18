@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2702407385668995515}
   - component: {fileID: 2702407385668995514}
   - component: {fileID: 5944618500498166861}
+  - component: {fileID: 1321806061}
   m_Layer: 7
   m_Name: Knight
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2702407385668995512}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.94, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -128,7 +129,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2702407385668995512}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -160,13 +161,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 8774274295348317810, guid: decebb3cc118a884bbbc6376d2851313, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 4374500331386199125, guid: decebb3cc118a884bbbc6376d2851313, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.92, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -190,7 +191,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.92, y: 2.56}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.92, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -237,7 +238,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.92, y: 2.56}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.92, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -282,7 +283,10 @@ MonoBehaviour:
   entity: {fileID: 0}
   struggleUI: {fileID: 2702407387675232892}
   abilityUI: {fileID: 0}
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: 1b954d7c90c14fd4abbb56b78bd9a269, type: 3}
+  - {fileID: 21300000, guid: 1af152d285595f746a0582c27bc50550, type: 3}
+  - {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
   isPossessed: 0
   resistStarted: 0
 --- !u!114 &2702407385668995517
@@ -331,7 +335,7 @@ MonoBehaviour:
     m_Bits: 64
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   wallCheck: {fileID: 2702407385668995504}
   checkGroundPoint: {fileID: 2702407387044670896}
   isBound: 1
@@ -377,6 +381,25 @@ MonoBehaviour:
   AbilityCooldown: 8
   icon: {fileID: 0}
   isCooldown: 0
+--- !u!95 &1321806061
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2702407385668995512}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6851fe1ce6b760d48842717a505c685f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2702407385947263230
 GameObject:
   m_ObjectHideFlags: 0

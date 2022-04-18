@@ -25,11 +25,20 @@ public class PlayerMovement : MonoBehaviour
     float jumpHeight = 3f;
     public bool facingRight = true;
 
+    //declares animator object
+    private Animator anim;
+
     // called at start of game
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<Collider2D>();
+
+    }
+    // called when script begins
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -59,6 +68,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // moves the player left/right based on input
+        if (moveDirection == 0) 
+        {
+            anim.SetInteger("walkState", 0);
+        }
+        else
+        {
+            anim.SetInteger("walkState", 1);
+        }
+
         if (isHittingWall())
             rb.velocity = new Vector2(0, rb.velocity.y);
         else

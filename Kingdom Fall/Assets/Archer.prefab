@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 6245130906314234610}
   - component: {fileID: 6245130906314234611}
   - component: {fileID: 8609258535257352216}
+  - component: {fileID: 1414869686}
   m_Layer: 7
   m_Name: Archer
   m_TagString: Untagged
@@ -251,7 +252,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6245130906314234609}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.4, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -424,7 +425,10 @@ MonoBehaviour:
   entity: {fileID: 0}
   struggleUI: {fileID: 6245130906192128073}
   abilityUI: {fileID: 0}
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: 1b954d7c90c14fd4abbb56b78bd9a269, type: 3}
+  - {fileID: 21300000, guid: 1af152d285595f746a0582c27bc50550, type: 3}
+  - {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
   isPossessed: 0
   resistStarted: 0
 --- !u!114 &6245130906314234620
@@ -473,7 +477,7 @@ MonoBehaviour:
     m_Bits: 64
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   wallCheck: {fileID: 6245130906314234617}
   checkGroundPoint: {fileID: 6245130907811622529}
   isBound: 1
@@ -518,6 +522,25 @@ MonoBehaviour:
   AbilityCooldown: 10
   icon: {fileID: 0}
   isCooldown: 0
+--- !u!95 &1414869686
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6245130906314234609}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3836c508e55bf29479ec48a265b11e48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6245130906324109210
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,7 +830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4806743829517321356, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 480
+      value: 479.9524
       objectReference: {fileID: 0}
     - target: {fileID: 4806743829517321356, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
       propertyPath: m_LocalPosition.x
@@ -839,11 +862,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4806743829517321356, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 291.18204
+      value: 291.23
       objectReference: {fileID: 0}
     - target: {fileID: 4806743829517321356, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 114.00439
+      value: 113.83
       objectReference: {fileID: 0}
     - target: {fileID: 4806743829517321356, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

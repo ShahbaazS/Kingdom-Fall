@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 8071067308000290583}
   - component: {fileID: 8071067308000290580}
   - component: {fileID: 8488285072286158603}
+  - component: {fileID: 716540666}
   m_Layer: 7
   m_Name: Mage
   m_TagString: Untagged
@@ -344,7 +345,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8071067308000290578}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.25, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -517,7 +518,10 @@ MonoBehaviour:
   entity: {fileID: 0}
   struggleUI: {fileID: 8071067307914887364}
   abilityUI: {fileID: 0}
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: 1b954d7c90c14fd4abbb56b78bd9a269, type: 3}
+  - {fileID: 21300000, guid: 1af152d285595f746a0582c27bc50550, type: 3}
+  - {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
   isPossessed: 0
   resistStarted: 0
 --- !u!114 &8071067308000290601
@@ -566,7 +570,7 @@ MonoBehaviour:
     m_Bits: 64
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   wallCheck: {fileID: 8071067308000290602}
   checkGroundPoint: {fileID: 8071067307350896514}
   isBound: 1
@@ -587,7 +591,7 @@ MonoBehaviour:
   bulletSpeed: 10
   sightRange: 10
   shootingRange: 8
-  maxSightRange: 8
+  maxSightRange: 12
   shootDelay: 1
 --- !u!114 &8488285072286158603
 MonoBehaviour:
@@ -610,6 +614,25 @@ MonoBehaviour:
   AbilityCooldown: 5
   icon: {fileID: 0}
   isCooldown: 0
+--- !u!95 &716540666
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8071067308000290578}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f74a063a3e9330468c172a52ef7db58, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8071067308377943118
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +901,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
+--- !u!1 &3654333546406114867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4806743829517321357, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
+  m_PrefabInstance: {fileID: 8071067306882118334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &3654333546406114866 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4806743829517321356, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
+  m_PrefabInstance: {fileID: 8071067306882118334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3654333546331059623 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4806743829692614425, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
@@ -889,13 +922,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3654333546406114867 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4806743829517321357, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
-  m_PrefabInstance: {fileID: 8071067306882118334}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &3654333546406114866 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4806743829517321356, guid: 528ff864d93f6b74b861bc8b35423037, type: 3}
-  m_PrefabInstance: {fileID: 8071067306882118334}
-  m_PrefabAsset: {fileID: 0}
