@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
     
 
     //time until bullet disappears (range of bullet)
-    public float time = 15f;
+    public float time = 0.6f;
 
     float currentTime = 0f;
 
