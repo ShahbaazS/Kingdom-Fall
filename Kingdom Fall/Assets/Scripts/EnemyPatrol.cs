@@ -29,10 +29,14 @@ public class EnemyPatrol : MonoBehaviour
 
     float currentTime = 0;
 
+    //declares animator object
+    private Animator anim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SetBounds(transform.position.x - 10, transform.position.x + 10);
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -46,6 +50,15 @@ public class EnemyPatrol : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (moveDirection == 0)
+        {
+            anim.SetInteger("walkState", 0);
+        }
+        else
+        {
+            anim.SetInteger("walkState", 1);
+        }
+
         if (canMove)
         {
             // moves the enemy left/right based on direction
