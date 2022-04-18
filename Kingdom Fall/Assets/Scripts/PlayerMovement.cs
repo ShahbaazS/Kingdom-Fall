@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     //declares animator object
     private Animator anim;
 
+    //declares audio source
+    AudioSource audioSrc;
+
     // called at start of game
     private void Awake()
     {
@@ -39,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -71,10 +75,13 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection == 0) 
         {
             anim.SetInteger("walkState", 0);
+            audioSrc.Stop();
         }
         else
         {
             anim.SetInteger("walkState", 1);
+            if (!audioSrc.isPlaying)
+                audioSrc.Play();
         }
 
         if (isHittingWall())

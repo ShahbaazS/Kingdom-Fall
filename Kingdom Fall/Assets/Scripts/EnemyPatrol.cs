@@ -32,11 +32,15 @@ public class EnemyPatrol : MonoBehaviour
     //declares animator object
     private Animator anim;
 
+    //declares audio source
+    AudioSource audioSrc;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         SetBounds(transform.position.x - 10, transform.position.x + 10);
         anim = GetComponent<Animator>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -53,10 +57,13 @@ public class EnemyPatrol : MonoBehaviour
         if (!canMove)
         {
             anim.SetInteger("walkState", 0);
+            audioSrc.Stop();
         }
         else
         {
             anim.SetInteger("walkState", 1);
+            if (!audioSrc.isPlaying)
+                audioSrc.Play();
         }
 
         if (canMove)
