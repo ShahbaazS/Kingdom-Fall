@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     //current health and max health
-    public float health = 100;
-    public float MaxHealth = 100;
+    public float health;
+    public float MaxHealth;
 
     //UI and slider for health bar
     public GameObject HealthUI;
@@ -55,7 +55,7 @@ public class Health : MonoBehaviour
     }
 
     void Die(){
-        if (gameObject.name == "Player"){
+        if (gameObject.layer == LayerMask.NameToLayer("Player")){
             GameOver.Setup();
         }
         Destroy(gameObject);
