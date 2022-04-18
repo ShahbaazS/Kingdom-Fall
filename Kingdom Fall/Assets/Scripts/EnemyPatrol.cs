@@ -1,4 +1,4 @@
-using System.Collections;
+o we kusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,7 +50,7 @@ public class EnemyPatrol : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (moveDirection == 0)
+        if (!canMove)
         {
             anim.SetInteger("walkState", 0);
         }
