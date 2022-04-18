@@ -265,7 +265,7 @@ MonoBehaviour:
   jumpPoint: {fileID: 2702407386151018903}
   EndLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   win: {fileID: 0}
   facingRight: 1
 --- !u!114 &2702407385668995518

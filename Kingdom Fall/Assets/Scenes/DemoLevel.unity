@@ -1186,6 +1186,10 @@ PrefabInstance:
       propertyPath: sprites.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
+    - target: {fileID: 2702407385668995519, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
     - target: {fileID: 5944618500498166861, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: icon
       value: 
@@ -1290,6 +1294,14 @@ PrefabInstance:
     - target: {fileID: 6245130906314234618, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 6245130906314234623, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: icon
@@ -1869,6 +1881,10 @@ PrefabInstance:
       propertyPath: sprites.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
+    - target: {fileID: 2702407385668995519, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
     - target: {fileID: 5944618500498166861, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: icon
       value: 
@@ -2455,6 +2471,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1707550750}
+    - target: {fileID: 2702407385668995519, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
     - target: {fileID: 5944618500498166861, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: icon
       value: 
@@ -2584,6 +2604,10 @@ PrefabInstance:
       propertyPath: sprites.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
+    - target: {fileID: 2702407385668995519, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
     - target: {fileID: 2702407386895577824, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3117,6 +3141,14 @@ PrefabInstance:
       propertyPath: sprites.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
+    - target: {fileID: 8071067308000290603, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 8071067308000290603, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 8071067308000290605, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
       propertyPath: m_GravityScale
       value: 1.25
@@ -3946,6 +3978,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 6245130906314234623, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: icon
       value: 
@@ -4063,6 +4103,14 @@ PrefabInstance:
     - target: {fileID: 6245130906314234609, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: m_Name
       value: Archer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 6245130906314234623, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: entity
@@ -5520,6 +5568,14 @@ PrefabInstance:
       propertyPath: sprites.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
+    - target: {fileID: 2702407385668995519, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 2702407385668995519, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5944618500498166861, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: icon
       value: 
@@ -48574,6 +48630,14 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1707550750}
+    - target: {fileID: 8071067308000290603, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 8071067308000290603, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 8071067308000290606, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -50111,6 +50175,10 @@ PrefabInstance:
       propertyPath: sprites.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
+    - target: {fileID: 2702407385668995519, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
     - target: {fileID: 5944618500498166861, guid: 5e34ab89abc117f43be0f544b4bc0af6, type: 3}
       propertyPath: icon
       value: 
@@ -50478,6 +50546,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 6245130906314234623, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: icon
       value: 
@@ -50604,6 +50680,14 @@ PrefabInstance:
       propertyPath: sprites.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: dfb3deaccb3be79489814d3329a20e80, type: 3}
+    - target: {fileID: 8071067308000290603, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 8071067308000290603, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 8071067308000290605, guid: 31d1e90b3730b4f4ba58c3d0cd3c7804, type: 3}
       propertyPath: m_GravityScale
       value: 1.25
@@ -50748,6 +50832,14 @@ PrefabInstance:
     - target: {fileID: 6245130906314234618, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 1921790055}
+    - target: {fileID: 6245130906314234622, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
+      propertyPath: EndLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 6245130906314234623, guid: bbd31192f0c2a354ca98a2a566208765, type: 3}
       propertyPath: icon
@@ -52290,8 +52382,8 @@ MonoBehaviour:
   jumpPoint: {fileID: 2699055602722571705}
   EndLayer:
     serializedVersion: 2
-    m_Bits: 0
-  win: {fileID: 0}
+    m_Bits: 512
+  win: {fileID: 1921790055}
   facingRight: 1
 --- !u!114 &2699055602711255235
 MonoBehaviour:
@@ -52953,8 +53045,8 @@ MonoBehaviour:
   jumpPoint: {fileID: 2702407386349411213}
   EndLayer:
     serializedVersion: 2
-    m_Bits: 0
-  win: {fileID: 0}
+    m_Bits: 512
+  win: {fileID: 1921790055}
   facingRight: 1
 --- !u!114 &2702407385739342758
 MonoBehaviour:
