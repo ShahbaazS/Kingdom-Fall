@@ -15,7 +15,7 @@ public class ArcherWeapon : MonoBehaviour
     //Position of camera and speed of bullet and ability
     private Vector3 MyPos;
     public float speed = 20f;
-    public int Arrows = 10;
+    public int Arrows = 20;
 
     public PlayerMovement Movement;
 

@@ -10,18 +10,18 @@ public class Sword : MonoBehaviour
     public Rigidbody2D rb;
 
     //time until bullet disappears (range of bullet)
-    public float time = 0.1f;
+    public float time = 0.2f;
 
     float currentTime = 0f;
 
     public void PowerUp(){
         damage = 70;
-        time = 0.6f;
+        time = 0.3f;
     }
 
     public void PowerDown(){
-        damage = 40;
-        time = 0.4f;
+        damage = 50;
+        time = 0.2f;
     }
 
     void Update(){
