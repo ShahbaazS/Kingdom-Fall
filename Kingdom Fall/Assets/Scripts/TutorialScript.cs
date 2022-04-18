@@ -21,6 +21,7 @@ public class TutorialScript : MonoBehaviour
     PlayerControl playerControl;
     public GameObject enemy;
     public GameObject end;
+    public GameObject panel;
 
     void Start()
     {
@@ -77,7 +78,10 @@ public class TutorialScript : MonoBehaviour
             case 8:
                 tutorialText.text = texts[index];
                 if (end.GetComponent<TutorialEnd>().tutorialEnd)
+                {
                     tutorialText.enabled = false;
+                    panel.SetActive(false);
+                }
                 break;
             default:
                 index = 0;
