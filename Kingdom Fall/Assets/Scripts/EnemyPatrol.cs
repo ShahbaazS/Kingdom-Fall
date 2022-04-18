@@ -6,6 +6,7 @@ public class EnemyPatrol : MonoBehaviour
 {
     // For detecting objects in the Ground layer (assigned in inspector)
     [SerializeField] LayerMask groundLayer;
+    [SerializeField] LayerMask wallLayer;
 
     // rigidbody for physics
     Rigidbody2D rb;
@@ -63,7 +64,7 @@ public class EnemyPatrol : MonoBehaviour
         // casts a line downwards from the player's position to detect if it hits the ground
         hit = Physics2D.Raycast(checkGroundPoint.position, Vector2.down, raycastLength, groundLayer);
 
-        if (hit.collider == false || wallCheck.IsTouchingLayers(groundLayer)) // checks if something in ground layer is hit
+        if (hit.collider == false || wallCheck.IsTouchingLayers(groundLayer) || wallCheck.IsTouchingLayers(wallLayer)) // checks if something in ground layer is hit
         {
             ChangeDirection();
         }

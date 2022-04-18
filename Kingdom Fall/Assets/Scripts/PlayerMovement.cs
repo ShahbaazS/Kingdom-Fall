@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Win win;
     // rigidbody for physics
     Rigidbody2D rb;
+    Collider2D boxCollider;
 
     // Raycast to determine if the player is on the ground
     RaycastHit2D hit;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<Collider2D>();
     }
 
     void Update()
@@ -57,7 +59,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // moves the player left/right based on input
-        rb.velocity = new Vector2(moveDirection * moveSpeed * Time.deltaTime, rb.velocity.y);
+        if (isHittingWall())
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        else
+            rb.velocity = new Vector2(moveDirection * moveSpeed * Time.deltaTime, rb.velocity.y);
 
         // lets the player jump and makes sure the player is on the ground before jumping
         if (jump && isGrounded())
@@ -81,6 +86,22 @@ public class PlayerMovement : MonoBehaviour
         hit = Physics2D.Raycast(jumpPoint.position, Vector2.down, raycastLength, EndLayer);
 
         if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool isHittingWall()
+    {
+        Vector2 bottomRight = new Vector2(boxCollider.bounds.max.x, boxCollider.bounds.min.y);
+        Vector2 bottomLeft = new Vector2(boxCollider.bounds.min.x, boxCollider.bounds.min.y);
+
+        RaycastHit2D hit2;
+        hit = Physics2D.Raycast(bottomRight, Vector2.right * moveDirection, 0.1f, groundLayer);
+        hit2 = Physics2D.Raycast(bottomLeft, Vector2.right * moveDirection, 0.1f, groundLayer);
+
+        if (hit.collider != null || hit2.collider != null) // checks if something in ground layer is hit
         {
             return true;
         }
